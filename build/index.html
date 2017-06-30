@@ -1,65 +1,136 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.1.3/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.1.3/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.1.3/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.1.3/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.1.3/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+<head>
+	<title>ngVikings 2018 - The legendary Angular conference in the Nordics. March 1st-2nd, Helsinki, Finland</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+<body class="is-loading">
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+	<!-- Wrapper -->
+	<div id="wrapper" class="fade-in">
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+		<!-- Intro -->
+		<div id="intro">
+			<h1>ngVikings 2018</h1>
+			<h2>The legendary <a href="https://angular.io">Angular</a> conference in the Nordics</h2> 
+			<p>March 1st-2nd, Helsinki, Finland</p>
+			<ul class="actions">
+				<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+			</ul>
+		</div>
+
+		<!-- Header -->
+		<header id="header">
+			<a href="index.html" class="logo">ngVikings 2018</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li class="active"><a href="#main">Latest news</a></li>
+				<li><a href="https://2017.ngvikings.org/">How it was in 2017</a></li>
+				<li><a href="http://bit.ly/vikings-cfp">Call For Papers</a></li>
+				<li><a href="http://bit.ly/sponsor-ngvikings">Call For Sponsors</a></li>
+			</ul>
+			<ul class="icons">
+				<li><a href="https://twitter.com/ngVikingsConf" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="https://facebook.com/ngVikings/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="https://github.com/ngvikings" class="icon fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Featured Post -->
+			<article class="post featured">
+				<header class="major">
+					<span class="date">June 30, 2017</span>
+					<h2><a href="http://bit.ly/vikings-cfp">Call For Papers</a></h2>
+					<p>Take your chance to speak at ngVikings 2018 - submit your presentation now!</p>
+				</header>
+				<a href="http://bit.ly/vikings-cfp" class="image main"><img src="images/pic03.jpg" alt="" /></a>
+				<ul class="actions">
+					<li><a href="http://bit.ly/vikings-cfp" class="button big">Go to CFP form</a></li>
+				</ul>
+			</article>
+
+			<!-- Posts -->
+			<section class="posts">
+				<article>
+					<header>
+						<span class="date">June 25, 2017</span>
+						<h2><a href="#">Save the dates!</a></h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/pic02.png" alt="" /></a>
+					<p>We are excited to announce: ngVikings 2018 will happen March 1-2 in Helsinki, Finland</p>
+				</article>
+				<article>
+					<header>
+						<span class="date">April 23, 2017</span>
+						<h2><a href="#">Vikings go to Finland!</a></h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/pic01.png" alt="" /></a>
+					<p>Ready for ngVikings 2018? Vikings love to travel, so we go to lovely Finland! Stay tuned - we announce the city, date,
+						venue, CFP soon!</p>
+				</article>
+			</section>
+
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+
+			<section class="split contact">
+				<section>
+					<h3>Contact us</h3>
+					<p><a href="mailto:contact@ngvikings.org">contact@ngvikings.org</a></p>
+				</section>
+				<section>
+					<h3>Social</h3>
+					<ul class="icons alt">
+						<li><a href="https://twitter.com/ngVikingsConf" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://facebook.com/ngVikings/" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://github.com/ngvikings" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</section>
+			</section>
+		</footer>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul>
+				<li>&copy; ngVikings Finland ry</li>
+				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-7105068-12', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+</body>
+
 </html>
