@@ -33,3 +33,32 @@
 			transform: none;
 			opacity: 1;
 		}
+
+		#nav .mobile {
+				display: none;
+			}
+
+		@media screen and (max-width: 980px) {
+
+			#nav {
+				display: block;
+				position: fixed;
+				top: 60px;
+				left: 0;
+				width: 100%;
+				background: rgba(3, 86, 152, 0.8);
+			}
+
+			#nav .icons {
+				display: none;
+			}
+
+			#nav span {
+				display: none;
+			}
+
+			#nav span.mobile {
+				display: block;
+			}
+
+		}
