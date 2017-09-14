@@ -4480,3 +4480,20 @@
 		}
 
 	}
+
+.partner-logos .logo-item {
+	float: left;
+	width: 150px;
+	height: 150px;
+	text-align: center;
+	font-size: 12px;
+	display: block;
+	text-decoration: none;
+	border: none;
+	margin: 0 20px 20px 0;
+}
+
+.partner-logos .logo-item img {
+	max-width: 150px;
+	display: block;
+}
