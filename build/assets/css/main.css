@@ -2053,7 +2053,7 @@
 			}
 
 /* Form */
-
+/* 
 	form {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -2066,6 +2066,7 @@
 		width: calc(100% + 3rem);
 		margin: -1.5rem 0 2rem -1.5rem;
 	}
+*/
 
 		form > .field {
 			-moz-flex-grow: 0;
