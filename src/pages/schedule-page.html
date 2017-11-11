@@ -1,0 +1,133 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+
+<link rel="import" href="../mixins/utils-functions.html">
+<link rel="import" href="../mixins/redux-mixin.html">
+<link rel="import" href="../elements/shared-styles.html">
+<link rel="import" href="../elements/schedule-day.html">
+
+<dom-module id="schedule-page">
+  <template>
+    <style is="custom-style" include="shared-styles flex flex-alignment"></style>
+
+    <style>
+
+      :host {
+        display: block;
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          padding: 0 0 32px;
+        }
+      }
+
+      @media (min-width: 640px) {
+        :host {
+          background-color: #fff;
+        }
+      }
+
+    </style>
+
+    <app-route
+      route="[[route]]"
+      pattern="/:day"
+      data="{{routeData}}"
+      query-params="{{queryParams}}"
+    ></app-route>
+
+    <div class="container">
+      <iron-pages selected="[[subRoute]]" attr-for-selected="name">
+        <template is="dom-repeat" items="[[transformToArray(schedule.days, 'date')]]" as="day">
+          <schedule-day
+            name$="[[day.date]]"
+            day="[[day]]"
+            user="[[user]]"
+            featured-sessions="[[sessions.featured]]"
+          ></schedule-day>
+        </template>
+      </iron-pages>
+    </div>
+  </template>
+
+  <script>
+
+    class SchedulePage extends UtilsFunctions(ReduxMixin(Polymer.Element)) {
+      static get is() {
+        return 'schedule-page'
+      }
+
+      static get properties() {
+        return {
+          route: Object,
+          active: Boolean,
+          schedule: {
+            type: Object,
+            statePath: 'schedule'
+          },
+          user: {
+            type: Object,
+            statePath: 'user'
+          },
+          sessions: {
+            type: Object,
+            statePath: 'sessions'
+          },
+          subRoute: {
+            type: Object,
+            statePath: 'routing.subRoute'
+          },
+          isDialogOpened: {
+            type: Object,
+            statePath: 'dialogs.session.isOpened'
+          }
+        }
+      }
+
+      static get observers() {
+        return [
+          '_setDay(active, routeData.day, schedule.days)',
+          '_openSessionDetails(active, sessions.list, queryParams.sessionId)',
+          '_fetchFeaturedSessions(active, user.uid)'
+        ];
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+        if (!this.schedule.days) scheduleActions.fetchSchedule();
+      }
+
+      _fetchFeaturedSessions(active, userUid) {
+        if (active && userUid && !this.sessions || this.sessions && this.sessions.featured && !this.sessions.featured.length) {
+          sessionsActions.fetchUserFeaturedSessions(userUid);
+        }
+      }
+
+      _setDay(active, day, scheduleDays) {
+        if (active && scheduleDays) {
+          routingActions.setSubRoute(day || Object.keys(scheduleDays)[0]);
+        }
+      }
+
+      _openSessionDetails(active, sessions, id) {
+        if (active && sessions && Object.keys(sessions).length) {
+          requestAnimationFrame(() => {
+              if (id) {
+                dialogsActions.openDialog(DIALOGS.SESSION, sessions[id]);
+              } else if (this.isDialogOpened) {
+                dialogsActions.closeDialog(DIALOGS.SESSION);
+              }
+            }
+          )
+        }
+      }
+    }
+
+    window.customElements.define(SchedulePage.is, SchedulePage);
+
+  </script>
+</dom-module>
+

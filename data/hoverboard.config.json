@@ -1,0 +1,191 @@
+{
+  "basepath": "/",
+  "url": "https://ngvikings.org/",
+  "startDate": "2018-03-01T09:00:00+01:00",
+  "endDate": "2018-03-02T19:00:00+01:00",
+  "analytics": {
+    "prod": "UA-7105068-12",
+    "dev": "UA-7105068-12"
+  },
+  "environment": "dev",
+  "prefix": "/",
+  "firebase": {
+    "apiKey": "AIzaSyBdvnINFe6A8hNMJEOrtOc-z4N-UCmKmJ8",
+    "authDomain": "ngvikings-81b48.firebaseapp.com",
+    "databaseURL": "https://ngvikings-81b48.firebaseio.com",
+    "projectId": "ngvikings-81b48",
+    "storageBucket": "ngvikings-81b48.appspot.com",
+    "messagingSenderId": "359590570491"
+  },
+  "googleMapApiKey": "AIzaSyBW4q921yGrUvFhqlD3aPCA8FIkmc_ollk",
+  "organizer": {
+    "name": "GDG Lviv",
+    "twitter": "gdglviv",
+    "blog": "https://medium.com/gdg-lviv",
+    "url": "http://lviv.gdg.org.ua/"
+  },
+  "webapp": {
+    "shortName": "ngVikings2018",
+    "themeColor": "#2855a5",
+    "backgroundColor": "#2855a5"
+  },
+  "hashtag": "ngVikings",
+  "navigation": [
+    {
+      "route": "home",
+      "permalink": "/",
+      "title": "Home"
+    },
+    {
+      "route": "blog",
+      "permalink": "/blog/",
+      "title": "Blog"
+    },
+    {
+      "route": "schedule",
+      "permalink": "/schedule/",
+      "title": "Schedule"
+    },
+    {
+      "route": "speakers",
+      "permalink": "/speakers/",
+      "title": "Speakers"
+    },
+    {
+      "route": "team",
+      "permalink": "/team/",
+      "title": "Team"
+    }
+  ],
+  "heroSettings": {
+    "home": {
+      "description": "The main Angular conference in the Nordics",
+      "background": {
+        "color": "#2855a5",
+        "image": "/images/backgrounds/home.jpg"
+      },
+      "fontColor": "#FFF"
+    },
+    "blog": {
+      "title": "Blog",
+      "background": {
+        "color": "#FFF"
+      },
+      "fontColor": "#2855a5"
+    },
+    "speakers": {
+      "title": "Speakers",
+      "description": "Hear from the Googlers, Partners, and Guest Speakers who are building the future of cloud. Check back often as we add more speakers, including our customers and partners.",
+      "background": {
+        "color": "#FFF"
+      },
+      "fontColor": "#2855a5"
+    },
+    "schedule": {
+      "title": "Schedule",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "team": {
+      "title": "Team",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "faq": {
+      "title": "FAQs",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    }
+  },
+  "location": {
+    "short": "Helsinki, Finland",
+    "address": "Mannerheimintie 13e, 00100 Helsinki, Finland",
+    "pointer": {
+      "latitude": 60.1756992,
+      "longitude": 24.9314205,
+      "zoom": 5
+    },
+    "mapCenter": {
+      "latitude": 60.1756992,
+      "longitude": 24.9314205
+    },
+    "description": "A masterpiece by the world-renowned Finnish architect, Alvar Aalto, Finlandia Hall is worth a visit in its own right."
+  },
+  "mediaQueries": {
+    "xs": {
+      "max": "639px"
+    },
+    "sm": {
+      "min": "640px",
+      "max": "811px"
+    },
+    "md": {
+      "min": "812px",
+      "max": "1023px"
+    },
+    "lg": {
+      "min": "1024px"
+    }
+  },
+  "socialNetwork": {
+    "follow": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/ngVikings"
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/ngVikingsConf/"
+      }
+    ],
+    "share": [
+      {
+        "name": "gplus",
+        "url": "https://plus.google.com/share?url="
+      },
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/sharer.php?u="
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/intent/tweet?text="
+      }
+    ]
+  },
+  "mailto": "contact@ngvikings.org",
+  "mailchimp": {
+    "url": "//ngvikings.us14.list-manage.com/subscribe/post?u=6b46654a7c89c5e401545b749&amp;id=cc658f949f",
+    "name": "6b46654a7c89c5e401545b749_cc658f949f"
+  },
+  "signInProviders": {
+    "providersData": [
+      {
+        "name": "google",
+        "label": "Sign-in with Google",
+        "url": "https://accounts.google.com"
+      }, 
+      {
+        "name": "facebook",
+        "label": "Sign-in with Facebook",
+        "url": "https://www.facebook.com"
+      }, 
+      {
+        "name": "twitter",
+        "label": "Sign-in with Twitter",
+        "url": "https://twitter.com"
+      }
+    ],
+    "allowedProvidersUrl": [
+      "https://accounts.google.com",
+      "https://www.facebook.com",
+      "https://twitter.com"
+    ]
+  }
+}

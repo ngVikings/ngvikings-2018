@@ -1,0 +1,307 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/mixins/gesture-event-listeners.html">
+
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/plastic-image/plastic-image.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../mixins/redux-mixin.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="featured-videos">
+  <template>
+    <style is="custom-style" include="shared-styles flex flex-alignment positioning"></style>
+
+    <style>
+      :host {
+        display: block;
+        --video-item-height: 256px;
+      }
+
+      .video-list {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .videos {
+        transition: transform var(--slideAnimation);
+        will-change: transition;
+        transform: translateX(0);
+      }
+
+      .slide-icon {
+        margin: 8px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        z-index: 1;
+        top: calc(var(--video-item-height) / 2 - 25px);
+        display: block;
+        opacity: 0.9;
+        background-color: #fff;
+        border-radius: 50%;
+        color: var(--default-primary-color);
+        transition: opacity var(--animation);
+      }
+
+      .slide-icon:last-of-type {
+        right: 0;
+      }
+
+      .video-item {
+        width: calc(var(--max-container-width) / 3 - 16px);
+        cursor: pointer;
+      }
+
+      .video-item:not(:last-of-type) {
+        padding-right: 30px;
+      }
+
+      .video-item:hover .video-play-icon {
+        transform: scale(1.2) translateZ(0);
+      }
+
+      .thumbnail {
+        width: 100%;
+        height: var(--video-item-height);
+        overflow: hidden;
+        border-radius: var(--border-radius);
+      }
+
+      .thumbnail-image {
+        background-color: var(--secondary-background-color);
+      }
+
+      .image-overlay {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .video-play-icon {
+        width: 60px;
+        height: 60px;
+        color: #fff;
+        opacity: 0.8;
+        transform: translateZ(0);
+        transition: transform var(--animation);
+      }
+
+      .video-title {
+        margin-top: 8px;
+        font-family: var(--font-family);
+        color: var(--secondary-text-color);
+      }
+
+      .cta-button {
+        margin-top: 24px;
+      }
+
+    </style>
+    <div class="container">
+      <div class="header" layout horizontal justified center wrap>
+        <h1 class="container-title">{$ featuredVideos.title $}</h1>
+      </div>
+
+      <div class="video-list" layout flex horizontal>
+        <paper-icon-button
+          class="last-video slide-icon"
+          icon="hoverboard:chevron-left"
+          on-tap="shiftContentLeft"
+        ></paper-icon-button>
+
+        <div id="videos" class="videos" layout horizontal>
+          <template is="dom-repeat" items="[[videos]]" as="block" index-as="index">
+            <div class="video-item"
+                  on-tap="playVideo"
+                  ga-on="click"
+                  ga-event-category="video"
+                  ga-event-action="watch"
+                  ga-event-label$="[[block.title]]">
+              <div class="thumbnail" relative layout horizontal center-center>
+                <plastic-image
+                  id="image[[index]]"
+                  class="thumbnail-image"
+                  srcset="[[getSessionsImageUrl(block.thumbnail, index)]]"
+                  sizing="cover"
+                  lazy-load preload fade fit
+                ></plastic-image>
+                <div class="image-overlay" fit></div>
+                <paper-icon-button
+                  class="video-play-icon"
+                  icon="hoverboard:play"
+                ></paper-icon-button>
+              </div>
+
+              <h4 class="video-title">[[block.title]]</h4>
+            </div>
+          </template>
+        </div>
+
+        <paper-icon-button
+          class="next-video slide-icon"
+          icon="hoverboard:chevron-right"
+          on-tap="shiftContentRight"
+        ></paper-icon-button>
+
+      </div>
+
+      <a
+        href="{$ featuredVideos.callToAction.link $}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <paper-button class="cta-button animated icon-right">
+          <span>{$ featuredVideos.callToAction.label $}</span>
+          <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
+        </paper-button>
+      </a>
+
+    </div>
+  </template>
+
+  <script>
+    class FeaturedVideos extends ReduxMixin(Polymer.GestureEventListeners(Polymer.Element)) {
+      static get is() {
+        return 'featured-videos'
+      }
+
+      static get properties() {
+        return {
+          videos: {
+            type: Object,
+            statePath: 'videos'
+          },
+          viewport: {
+            type: Object,
+            statePath: 'ui.viewport'
+          },
+          _currentIndex: {
+            type: Number,
+            value: 0
+          }
+        }
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+        videosActions.fetchVideos();
+      }
+
+      ready() {
+        super.ready();
+        let startPosition = 0;
+        let currentPosition = 0;
+        let distancePosition = 0;
+        let isMouseDown = false;
+        const videoListElement = this.$.videos;
+
+        Polymer.Gestures.addListener(this.$.videos, 'track', e => {
+          if (!isMouseDown) return;
+
+          const videoListWidth = this.getVideoListWidth();
+          distancePosition = (e.detail.x - startPosition) + currentPosition;
+
+          if (distancePosition < 0 && -distancePosition < (videoListWidth + 100 - window.innerWidth)) {
+            this.transformVideoList(videoListElement, distancePosition);
+          }
+        });
+
+        Polymer.Gestures.addListener(this.$.videos, 'down', event => {
+          isMouseDown = true;
+          currentPosition = parseInt(getComputedStyle(videoListElement, null).getPropertyValue('transform').split(',')[4]);
+          startPosition = event.detail.x;
+        });
+
+        Polymer.Gestures.addListener(this.$.videos, 'up', () => {
+          isMouseDown = false;
+        });
+      }
+
+      shiftContentLeft() {
+        const {
+          cardWidth,
+          videosLength,
+          slideIndex
+        } = this.getVideosDetails();
+
+        this._currentIndex = slideIndex < this._currentIndex ? slideIndex : this._currentIndex;
+
+        if (this._currentIndex < videosLength && this._currentIndex > 0) {
+          const newX = -(this._currentIndex - 1) * cardWidth;
+          this.transformVideoList(this.$.videos, newX);
+          this._currentIndex--;
+        }
+      }
+
+      shiftContentRight() {
+        const {
+          cardWidth,
+          videosLength,
+          slideIndex
+        } = this.getVideosDetails();
+
+        this._currentIndex = slideIndex > this._currentIndex ? slideIndex : this._currentIndex;
+
+        if (this._currentIndex >= 0 && this._currentIndex < videosLength - 1) {
+          const newX = -(this._currentIndex + 1) * cardWidth;
+          this.transformVideoList(this.$.videos, newX);
+          this._currentIndex++;
+        }
+      }
+
+      getVideosDetails() {
+        const videos = this.shadowRoot.querySelectorAll('.video-item');
+        const cardRect = videos[videos.length - 1].getBoundingClientRect();
+        const cardWidth = cardRect.width;
+        const videosLength = videos.length;
+        const currentPosition = parseInt(getComputedStyle(this.$.videos, null).getPropertyValue('transform').split(',')[4]);
+        const slideIndex = -(Math.floor(currentPosition / cardWidth));
+
+        return {
+          cardWidth,
+          videosLength,
+          slideIndex
+        }
+      }
+
+      getVideoListWidth() {
+        const videos = this.shadowRoot.querySelectorAll('.video-item');
+        const cardRect = videos[videos.length - 1].getBoundingClientRect();
+        return cardRect.width * videos.length;
+      }
+
+      transformVideoList(el, newPosition) {
+        el.style.transform = 'translate3d(' + newPosition + 'px, 0, 0)';
+      }
+
+      getSessionsImageUrl(path, index) {
+        const id = '#image' + index;
+        firebase.storage()
+          .ref(path)
+          .getDownloadURL()
+          .then((url) => {
+            let imageElement = this.shadowRoot.querySelector(id);
+            imageElement.srcset = url;
+          })
+          .catch((error) => {
+            console.error(`Error occurred during getting sessions images from storage: ${error}`);
+          });
+      }
+
+      playVideo(e) {
+        const presenters = e.model.__data.block.speakers ? (` by ${e.model.__data.block.speakers}`) : '';
+        const title = e.model.__data.block.title + presenters;
+        const youtubeId = e.model.__data.block.youtubeId;
+
+        uiActions.toggleVideoDialog({
+          title: title,
+          youtubeId: youtubeId,
+          disableControls: true,
+          opened: true
+        });
+      }
+    }
+
+    window.customElements.define(FeaturedVideos.is, FeaturedVideos);
+
+  </script>
+</dom-module>

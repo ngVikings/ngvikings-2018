@@ -1,0 +1,231 @@
+{
+  "title": "ngVikings 2018",
+  "description": "Having Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
+  "keywords": "event, angular, gde, google, programming, android, chrome, polymer, developers, web, cloud",
+  "dates": "March 1-2, 2018",
+  "partnershipProposition": "http://bit.ly/sponsor-ngvikings",
+  "share": "Share",
+  "followOur": "Follow our",
+  "followUs": "Follow us",
+  "emailUs": "Email us",
+  "partnershipResources": "Partnership Resources",
+  "eventResources": "Event Resources",
+  "buyTicket": "Buy ticket",
+  "signIn": "Sign in",
+  "signOut": "Sign out",
+  "footer": {
+    "blog": "Blog"
+  },
+  "footerRelBlock": [
+    {
+      "title": "About",
+      "links": [
+        {
+          "name": "GDG Lviv",
+          "url": "http://lviv.gdg.org.ua/",
+          "newTab": true
+        },
+        {
+          "name": "Google Developers Group",
+          "url": "https://developers.google.com/",
+          "newTab": true
+        },
+        {
+          "name": "Meet the Team",
+          "url": "https://devfest.gdg.org.ua/team/",
+          "newTab": true
+        }
+      ]
+    },
+    {
+      "title": "Explore ngVikings 2017",
+      "links": [
+        {
+          "name": "Photos",
+          "url": "https://www.facebook.com/pg/ngVikings/photos/?tab=albums",
+          "newTab": true
+        },
+        {
+          "name": "Videos",
+          "url": "https://opbeat.com/community/events/ngvikings-2017/",
+          "newTab": true
+        },
+        {
+          "name": "Program",
+          "url": "https://2017.ngvikings.org/schedule/",
+          "newTab": true
+        },
+        {
+          "name": "Speakers",
+          "url": "https://2017.ngvikings.org/speakers/",
+          "newTab": true
+        }
+      ]
+    },
+    {
+      "title": "Event Resources",
+      "links": [
+        {
+          "name": "Partnership Proposition",
+          "url": "http://bit.ly/sponsor-ngvikings",
+          "newTab": true
+        },
+        {
+          "name": "Call for Papers",
+          "url": "http://bit.ly/vikings-cfp",
+          "newTab": true
+        }
+      ]
+    }
+  ],
+  "subscribeNote": "No spam, only the latest news and updates!",
+  "codeOfConduct": "Code of Conduct",
+  "aboutBlock": {
+    "title": "What you need to know, before you ask.",
+    "callToAction": {
+      "featuredSessions": {
+        "description": "Having Angular team members, Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
+        "label": "Explore featured speakers",
+        "link": "/speakers/"
+      },
+      "howItWas": {
+        "description": "We did our best to have the first ngVikings rock in 2017!",
+        "label": "See how it was in 2017",
+        "youtubeId": "biNqdno0yqk"
+      }
+    },
+    "statisticsBlock": {
+      "attendees": {
+        "label": "Attendees",
+        "number": "400"
+      },
+      "days": {
+        "label": "Days",
+        "number": "2"
+      },
+      "sessions": {
+        "label": "Sessions",
+        "number": "50"
+      },
+      "tracks": {
+        "label": "Tracks",
+        "number": "3"
+      }
+    }
+  },
+  "ticketsBlock": {
+    "title": "Tickets",
+    "ticketsDetails": "Tickets grant access to all conference sections, coffee breaks, lunch and party. Accommodation is NOT included in the ticket price.",
+    "soldOut": "Sold out"
+  },
+  "partnersBlock": {
+    "title": "Partners",
+    "button": "Become a partner"
+  },
+  "featuredVideos": {
+    "title": "ngVikings 2017 featured videos",
+    "callToAction": {
+      "label": "See all videos",
+      "link": "https://opbeat.com/community/events/ngvikings-2017/"
+    }
+  },
+  "blog": {
+    "published": "Published",
+    "suggested": "Up next"
+  },
+  "latestPostsBlock": {
+    "title": "The latest news",
+    "callToAction": {
+      "label": "View all stories",
+      "link": "/blog/"
+    }
+  },
+  "faq": "/markdown/faq.md",
+  "speakers": {
+    "skills": "Skills"
+  },
+  "speakersBlock": {
+    "title": "Featured speakers",
+    "callToAction": {
+      "label": "View all speakers",
+      "link": "/speakers/"
+    }
+  },
+  "galleryBlock": {
+    "title": "#ngVikings highlights",
+    "description": "This year's festival built lots of excitement. Check out photos from featured talks, hands-on learning sessions, and after-hours fun.",
+    "callToAction": {
+      "label": "See all photos",
+      "link": "https://goo.gl/photos/H8s3CtPexCzkLqSt9"
+    }
+  },
+  "mapBlock": {
+    "title": "Location"
+  },
+  "subscribeBlock": {
+    "callToAction": {
+      "description": "Get notified about the important conference updates",
+      "label": "Subscribe"
+    },
+    "yourEmail": "Your email",
+    "emailAddress": "Email Address",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "formTitle": "Get the latest updates, insights and news about ngVikings sent to your inbox.",
+    "emailRequired": "Please enter a valid email address.",
+    "subscribe": "Subscribe",
+    "subscribed": "Subscribed",
+    "close": "Close",
+    "generalError": "Some error has occured. Please, try again later."
+  },
+  "team": {
+    "description": "Google is known all around the world. Everyone is 'googling', checking on 'maps' and communicating in 'gmail'. For simple users, they are services that just works, but not for us. Developers see much more: APIs, scalability issues, complex technology stacks. And that is what GDG is about.<br><br> [Google Developers Group (GDG) Lviv](http://lviv.gdg.org.ua/) - is open and volunteer geek community who create exciting projects and share experience about Google technologies with a passion.<br><br> Our goal is to organize space to connect the best industry experts with Ukrainian audience to boost development of IT."
+  },
+  "schedule": {
+    "saveSessionsSignedOut": "Sign in to save sessions"
+  },
+  "sessionDetails": {
+    "contentLevel": "Content level",
+    "viewPresentation": "View presentation",
+    "viewVideo": "View video",
+    "speakers": "Speakers"
+  },
+  "speakerDetails": {
+    "sessions": "Sessions"
+  },
+  "notifications": {
+    "default": "Enable notifications",
+    "enabled": "We will miss you but you can unsubscribe anytime",
+    "blocked": "We can't send you notifications right now. Please enable notifications in your browser",
+    "subscribe": "Subscribe",
+    "unsubscribe": "Unsubscribe",
+    "enable": {
+      "label": "Enable",
+      "link": "https://pushassist.com/knowledgebase/how-to-enable-or-disable-push-notifications-on-chrome-firefox-safari-b/"
+    },
+    "toast": {
+      "title": "Open"
+    }
+  },
+  "aboutOrganizerBlock": {
+    "blocks": [
+      {
+        "title": "Organizer",
+        "description": "ngVikings is a 100% community-driven event comprised of many Nordic Angular groups with more than 3 500 active members in total:<ul><li>AngularJS Copenhagen<li>GDG Copenhagen<li>AngularJS Oslo<li>AngularJS Gothenburg<li>ngAarhus<li>ngStockholm<li>Angular Finland</ul>",
+        "callToAction": {
+          "label": "Open team page",
+          "link": "/team"
+        }
+      },
+      {
+        "title": "What is ngVikings?",
+        "description": "ngVikings is a community-driven Angular conference travelling across the Nordic countries. The second ngVikings event is scheduled for the 1st & 2nd of March in Helsinki, Finland. This event will gather 400+ front-end developers from different countries together. It's the largest Angular conference hosted in the Nordic countries. The talks and workshops will be mostly about Angular (with the primary focus on Angular 5 and later) and other technologies related to the Angular framework. ngVikings operates as a non-profit organization.",
+        "callToAction": {
+          "label": "Read more",
+          "link": "/team",
+          "newTab": false
+        }
+      }
+    ]
+  }
+}
