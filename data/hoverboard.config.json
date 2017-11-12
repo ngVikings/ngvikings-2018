@@ -19,10 +19,10 @@
   },
   "googleMapApiKey": "AIzaSyBW4q921yGrUvFhqlD3aPCA8FIkmc_ollk",
   "organizer": {
-    "name": "GDG Lviv",
-    "twitter": "gdglviv",
-    "blog": "https://medium.com/gdg-lviv",
-    "url": "http://lviv.gdg.org.ua/"
+    "name": "ngVikings Team",
+    "twitter": "ngVikingsConf",
+    "blog": "https://ngvikings.org",
+    "url": "https://ngvikings.org"
   },
   "webapp": {
     "shortName": "ngVikings2018",
@@ -40,11 +40,6 @@
       "route": "blog",
       "permalink": "/blog/",
       "title": "Blog"
-    },
-    {
-      "route": "schedule",
-      "permalink": "/schedule/",
-      "title": "Schedule"
     },
     {
       "route": "speakers",
@@ -75,7 +70,7 @@
     },
     "speakers": {
       "title": "Speakers",
-      "description": "Hear from the Googlers, Partners, and Guest Speakers who are building the future of cloud. Check back often as we add more speakers, including our customers and partners.",
+      "description": "Having Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
       "background": {
         "color": "#FFF"
       },
@@ -109,7 +104,7 @@
     "pointer": {
       "latitude": 60.1756992,
       "longitude": 24.9314205,
-      "zoom": 5
+      "zoom": 10
     },
     "mapCenter": {
       "latitude": 60.1756992,
@@ -172,11 +167,6 @@
         "url": "https://accounts.google.com"
       }, 
       {
-        "name": "facebook",
-        "label": "Sign-in with Facebook",
-        "url": "https://www.facebook.com"
-      }, 
-      {
         "name": "twitter",
         "label": "Sign-in with Twitter",
         "url": "https://twitter.com"
@@ -184,7 +174,6 @@
     ],
     "allowedProvidersUrl": [
       "https://accounts.google.com",
-      "https://www.facebook.com",
       "https://twitter.com"
     ]
   }
