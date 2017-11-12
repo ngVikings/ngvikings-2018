@@ -179,7 +179,7 @@
     "generalError": "Some error has occured. Please, try again later."
   },
   "team": {
-    "description": "ngVikings is a 100% community-driven event comprised of many Nordic Angular groups with more than 3 500 active members in total:<ul><li>AngularJS Copenhagen<li>GDG Copenhagen<li>AngularJS Oslo<li>AngularJS Gothenburg<li>ngAarhus<li>ngStockholm<li>Angular Finland</ul>"
+    "description": "ngVikings is a 100% community-driven event comprised of many Nordic Angular groups with more than 3500 active members in total:<ul><li>AngularJS Copenhagen<li>GDG Copenhagen<li>AngularJS Oslo<li>AngularJS Gothenburg<li>ngAarhus<li>ngStockholm<li>Angular Finland</ul>"
   },
   "schedule": {
     "saveSessionsSignedOut": "Sign in to save sessions"
