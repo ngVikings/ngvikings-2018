@@ -21,7 +21,7 @@
   "organizer": {
     "name": "ngVikings Team",
     "twitter": "ngVikingsConf",
-    "blog": "/blog/",
+    "blog": "https://twitter.com/ngVikingsConf",
     "url": "https://ngvikings.org"
   },
   "webapp": {
@@ -35,11 +35,6 @@
       "route": "home",
       "permalink": "/",
       "title": "Home"
-    },
-    {
-      "route": "blog",
-      "permalink": "/blog/",
-      "title": "Blog"
     },
     {
       "route": "speakers",
@@ -105,7 +100,7 @@
     "pointer": {
       "latitude": 60.1756992,
       "longitude": 24.9314205,
-      "zoom": 15
+      "zoom": 11
     },
     "mapCenter": {
       "latitude": 60.1756992,

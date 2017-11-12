@@ -14,7 +14,7 @@
   "signIn": "Sign in",
   "signOut": "Sign out",
   "footer": {
-    "blog": "Blog"
+    "blog": "Latest updates"
   },
   "footerRelBlock": [
     {
@@ -32,8 +32,8 @@
         },
         {
           "name": "Code of Conduct",
-          "url": "/team",
-          "newTab": false
+          "url": "https://2017.ngvikings.org/cod/",
+          "newTab": true
         }
       ]
     },
