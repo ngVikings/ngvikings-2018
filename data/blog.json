@@ -1,0 +1,48 @@
+[
+    {
+      "id": "finland",
+      "title": "Vikings go to Finland!",
+      "posted": "2017-04-23",
+      "primaryColor": "#2855a5",
+      "secondaryColor": "#2855a5",
+      "image": "/images/posts/pic01.png",
+      "brief": ""
+    },
+    {
+      "id": "dates",
+      "title": "We are ready to announce the dates for ngVikings 2018",
+      "posted": "2017-06-25",
+      "primaryColor": "#2855a5",
+      "secondaryColor": "#2855a5",
+      "image": "/images/posts/pic02.png",
+      "brief": ""
+    },
+    {
+      "id": "cfp",
+      "title": "Call for Papers!",
+      "posted": "2017-06-30",
+      "primaryColor": "#2855a5",
+      "secondaryColor": "#2855a5",
+      "image": "/images/posts/pic03.png",
+      "brief": ""
+    },
+    {
+      "id": "tickets",
+      "title": "We start selling the tickets",
+      "posted": "2017-10-16",
+      "primaryColor": "#2855a5",
+      "secondaryColor": "#2855a5",
+      "image": "/images/posts/pic01.png",
+      "brief": ""
+    },
+    {
+      "id": "new-website",
+      "title": "Our new website is ready!",
+      "posted": "2017-11-12",
+      "primaryColor": "#2855a5",
+      "secondaryColor": "#2855a5",
+      "image": "/images/posts/pic02.png",
+      "brief": ""
+    }
+  ]
+  

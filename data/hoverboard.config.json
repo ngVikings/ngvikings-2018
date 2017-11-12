@@ -54,7 +54,7 @@
   ],
   "heroSettings": {
     "home": {
-      "description": "The main Angular conference in the Nordics",
+      "description": "The main Angular event in the Nordics. And the only travelling Angular conference in the world.",
       "background": {
         "color": "#2855a5",
         "image": "/images/backgrounds/home.jpg"
@@ -85,7 +85,7 @@
     },
     "team": {
       "title": "Team",
-      "description": "ngVikings is a 100% community-driven event comprised of many Nordic Angular groups with more than 3 500 active members in total:<ul><li>AngularJS Copenhagen<li>GDG Copenhagen<li>AngularJS Oslo<li>AngularJS Gothenburg<li>ngAarhus<li>ngStockholm<li>Angular Finland</ul>",
+      "description": "",
       "background": {
         "color": "#fff"
       },
