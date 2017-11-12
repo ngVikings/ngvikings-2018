@@ -1,6 +1,6 @@
 {
   "title": "ngVikings 2018",
-  "description": "Having Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
+  "description": "Having Angular team members, Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
   "keywords": "event, angular, gde, google, programming, android, chrome, polymer, developers, web, cloud",
   "dates": "March 1-2, 2018",
   "partnershipProposition": "http://bit.ly/sponsor-ngvikings",
@@ -18,22 +18,22 @@
   },
   "footerRelBlock": [
     {
-      "title": "About",
+      "title": "About us",
       "links": [
         {
-          "name": "GDG Lviv",
-          "url": "http://lviv.gdg.org.ua/",
-          "newTab": true
+          "name": "Meet the team",
+          "url": "/team",
+          "newTab": false
         },
         {
-          "name": "Google Developers Group",
-          "url": "https://developers.google.com/",
-          "newTab": true
+          "name": "Contact us",
+          "url": "mailto:contact@ngvikings.org",
+          "newTab": false
         },
         {
-          "name": "Meet the Team",
-          "url": "https://devfest.gdg.org.ua/team/",
-          "newTab": true
+          "name": "Code of Conduct",
+          "url": "/team",
+          "newTab": false
         }
       ]
     },
@@ -152,15 +152,15 @@
     }
   },
   "galleryBlock": {
-    "title": "#ngVikings highlights",
-    "description": "This year's festival built lots of excitement. Check out photos from featured talks, hands-on learning sessions, and after-hours fun.",
+    "title": "ngVikings 2017",
+    "description": "ngVikings build lots of excitement. Check out photos from featured talks, hands-on learning sessions, and after-hours fun.",
     "callToAction": {
       "label": "See all photos",
-      "link": "https://goo.gl/photos/H8s3CtPexCzkLqSt9"
+      "link": "https://www.facebook.com/pg/ngVikings/photos/?tab=albums"
     }
   },
   "mapBlock": {
-    "title": "Location"
+    "title": "Finlandia Hall"
   },
   "subscribeBlock": {
     "callToAction": {
@@ -179,7 +179,7 @@
     "generalError": "Some error has occured. Please, try again later."
   },
   "team": {
-    "description": "Google is known all around the world. Everyone is 'googling', checking on 'maps' and communicating in 'gmail'. For simple users, they are services that just works, but not for us. Developers see much more: APIs, scalability issues, complex technology stacks. And that is what GDG is about.<br><br> [Google Developers Group (GDG) Lviv](http://lviv.gdg.org.ua/) - is open and volunteer geek community who create exciting projects and share experience about Google technologies with a passion.<br><br> Our goal is to organize space to connect the best industry experts with Ukrainian audience to boost development of IT."
+    "description": "ngVikings is a 100% community-driven event comprised of many Nordic Angular groups with more than 3 500 active members in total:<ul><li>AngularJS Copenhagen<li>GDG Copenhagen<li>AngularJS Oslo<li>AngularJS Gothenburg<li>ngAarhus<li>ngStockholm<li>Angular Finland</ul>"
   },
   "schedule": {
     "saveSessionsSignedOut": "Sign in to save sessions"

@@ -21,7 +21,7 @@
   "organizer": {
     "name": "ngVikings Team",
     "twitter": "ngVikingsConf",
-    "blog": "https://ngvikings.org",
+    "blog": "/blog/",
     "url": "https://ngvikings.org"
   },
   "webapp": {
@@ -70,7 +70,7 @@
     },
     "speakers": {
       "title": "Speakers",
-      "description": "Having Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
+      "description": "Having Angular team members, Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
       "background": {
         "color": "#FFF"
       },
@@ -85,6 +85,7 @@
     },
     "team": {
       "title": "Team",
+      "description": "ngVikings is a 100% community-driven event comprised of many Nordic Angular groups with more than 3 500 active members in total:<ul><li>AngularJS Copenhagen<li>GDG Copenhagen<li>AngularJS Oslo<li>AngularJS Gothenburg<li>ngAarhus<li>ngStockholm<li>Angular Finland</ul>",
       "background": {
         "color": "#fff"
       },
@@ -104,7 +105,7 @@
     "pointer": {
       "latitude": 60.1756992,
       "longitude": 24.9314205,
-      "zoom": 10
+      "zoom": 15
     },
     "mapCenter": {
       "latitude": 60.1756992,
