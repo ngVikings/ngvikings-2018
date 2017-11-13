@@ -37,6 +37,11 @@
       "title": "Home"
     },
     {
+      "route": "blog",
+      "permalink": "/",
+      "title": "Blog"
+    },
+    {
       "route": "speakers",
       "permalink": "/speakers/",
       "title": "Speakers"
