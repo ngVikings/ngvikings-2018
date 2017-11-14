@@ -134,6 +134,9 @@
           <a href="{$ nav.permalink $}" layout vertical center-center>{$ nav.title $}</a>
         </paper-tab>
         {% endfor %}
+        <paper-tab class="nav-item" link>
+          <a href="http://ng-girls.org/ngVikings/" target="_blank" layout vertical center-center>ng-girls</a>
+        </paper-tab>
         <paper-tab class="signin-tab" on-tap="signIn" link hidden$="[[user.signedIn]]">{$ signIn $}</paper-tab>
       </paper-tabs>
 
