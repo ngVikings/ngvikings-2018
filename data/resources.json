@@ -92,6 +92,11 @@
         "description": "We did our best to have the first ngVikings rock in 2017!",
         "label": "See how it was in 2017",
         "youtubeId": "biNqdno0yqk"
+      },
+      "sponsor": {
+        "description": "Are you interested in sponsoring ngVikings 2018?",
+        "label": "Become sponsor",
+        "link": "http://bit.ly/sponsor-ngvikings"
       }
     },
     "statisticsBlock": {

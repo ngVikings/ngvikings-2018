@@ -164,6 +164,20 @@
                             <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
                         </paper-button>
                     </div>
+                    <p class="block-subtitle"> {$ aboutBlock.callToAction.sponsor.description $} </p>
+                    <a class="block-cta"
+                        href="{$ aboutBlock.callToAction.sponsor.link $}"
+                        ga-on="click"
+                        ga-event-category="video"
+                        ga-event-action="watch"
+                        ga-event-label="about block - {$ aboutBlock.callToAction.sponsor.label $}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <paper-button class="animated icon-right">
+                            <span class="cta-label">{$ aboutBlock.callToAction.sponsor.label $}</span>
+                            <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
+                        </paper-button>
+                    </a>
             </div>
 
             <div class="statistics-block" flex vertical>
