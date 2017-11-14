@@ -38,7 +38,7 @@
     },
     {
       "route": "blog",
-      "permalink": "/",
+      "permalink": "/blog/",
       "title": "News"
     },
     {
