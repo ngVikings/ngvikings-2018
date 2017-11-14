@@ -21,7 +21,7 @@
   "organizer": {
     "name": "ngVikings Team",
     "twitter": "ngVikingsConf",
-    "blog": "https://twitter.com/ngVikingsConf",
+    "blog": "/news/",
     "url": "https://ngvikings.org"
   },
   "webapp": {
@@ -39,7 +39,7 @@
     {
       "route": "blog",
       "permalink": "/",
-      "title": "Blog"
+      "title": "News"
     },
     {
       "route": "speakers",
@@ -62,7 +62,7 @@
       "fontColor": "#FFF"
     },
     "blog": {
-      "title": "Blog",
+      "title": "News",
       "background": {
         "color": "#FFF"
       },
@@ -93,6 +93,13 @@
     },
     "faq": {
       "title": "FAQs",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "code": {
+      "title": "Code of Conduct",
       "background": {
         "color": "#fff"
       },

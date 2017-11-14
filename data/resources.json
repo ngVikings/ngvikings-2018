@@ -5,7 +5,7 @@
   "dates": "March 1-2, 2018",
   "partnershipProposition": "http://bit.ly/sponsor-ngvikings",
   "share": "Share",
-  "followOur": "Follow our",
+  "followOur": "Follow our ",
   "followUs": "Follow us",
   "emailUs": "Email us",
   "partnershipResources": "Partnership Resources",
@@ -14,7 +14,7 @@
   "signIn": "Sign in",
   "signOut": "Sign out",
   "footer": {
-    "blog": "Latest updates"
+    "blog": "latest updates"
   },
   "footerRelBlock": [
     {
@@ -32,8 +32,8 @@
         },
         {
           "name": "Code of Conduct",
-          "url": "https://2017.ngvikings.org/cod/",
-          "newTab": true
+          "url": "/code/",
+          "newTab": false
         }
       ]
     },
@@ -43,22 +43,22 @@
         {
           "name": "Photos",
           "url": "https://www.facebook.com/pg/ngVikings/photos/?tab=albums",
-          "newTab": true
+          "newTab": false
         },
         {
           "name": "Videos",
           "url": "https://opbeat.com/community/events/ngvikings-2017/",
-          "newTab": true
+          "newTab": false
         },
         {
           "name": "Program",
           "url": "https://2017.ngvikings.org/schedule/",
-          "newTab": true
+          "newTab": false
         },
         {
           "name": "Speakers",
           "url": "https://2017.ngvikings.org/speakers/",
-          "newTab": true
+          "newTab": false
         }
       ]
     },
@@ -141,6 +141,7 @@
     }
   },
   "faq": "/markdown/faq.md",
+  "code": "/markdown/code-of-conduct.md",
   "speakers": {
     "skills": "Skills"
   },

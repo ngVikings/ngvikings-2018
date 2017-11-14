@@ -147,6 +147,7 @@ function compileTemplate() {
 function copyStatic() {
   return gulp.src([
     'data/**/*.{markdown,md}',
+    'assets/**/*',
     'images/**/*.{png,gif,jpg,svg}'
   ], {base: '.'})
     .pipe(gulp.dest(config.tempDirectory));
@@ -170,11 +171,13 @@ gulp.task('serve', gulp.series(compileTemplate, () => {
 
   gulp.watch([
     'data/**/*.{markdown,md}',
+    'assets/**/*',
     'images/**/*.{png,gif,jpg,svg}',
   ], gulp.series(copyStatic, reload));
 
   gulp.watch([
     'data/**/*.json',
+    'assets/**/*',
     'scripts/**/*.js',
     'src/**/*.html',
     '*.{html,js}',
