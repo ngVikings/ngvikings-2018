@@ -32,7 +32,7 @@
         },
         {
           "name": "Code of Conduct",
-          "url": "/code/",
+          "url": "/faq/",
           "newTab": false
         }
       ]
@@ -145,7 +145,7 @@
       "link": "/blog/"
     }
   },
-  "faq": "/markdown/faq.md",
+  "faq": "/markdown/code-of-conduct.md",
   "code": "/markdown/code-of-conduct.md",
   "speakers": {
     "skills": "Skills"
