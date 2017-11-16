@@ -18,6 +18,16 @@ module.exports = {
       }
     },
     {
+      urlPattern: /\/assets\/.*/,
+      handler: 'fastest',
+      options: {
+        cache: {
+          maxEntries: 200,
+          name: 'items-cache'
+        }
+      }
+    },
+    {
       urlPattern: /\/data\/.*json/,
       handler: 'fastest',
       options: {

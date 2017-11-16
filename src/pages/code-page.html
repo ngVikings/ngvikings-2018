@@ -91,7 +91,7 @@
     </template>
 
     <script>
-        class codePage extends ScrollFunctions(Polymer.Element) {
+        class CodePage extends ScrollFunctions(Polymer.Element) {
             static get is() { return 'code-page' }
             static get properties() {
                 return {
@@ -113,7 +113,7 @@
 
             constructor() {
                 super();
-                this._scrollTocodeChapter = this._scrollTocodeChapter.bind(this);
+                this._scrollToCodeChapter = this._scrollToCodeChapter.bind(this);
             }
 
             _renderContent() {
@@ -136,7 +136,7 @@
                     colContent.className = 'col-content';
                     colContent.href = `#${heads[i].id}`;
                     colContent.textContent = heads[i].textContent;
-                    colContent.addEventListener('click', this._scrollTocodeChapter);
+                    colContent.addEventListener('click', this._scrollToCodeChapter);
                     lastHeadElement.appendChild(colContent);
                 };
 
@@ -156,7 +156,7 @@
                     });
             }
 
-            _scrollTocodeChapter(e) {
+            _scrollToCodeChapter(e) {
                 e.preventDefault();
                 var elementIdToScroll = e.target.getAttribute('href');
                 var element = this.shadowRoot.querySelector(elementIdToScroll);
@@ -164,6 +164,6 @@
             }
         }
 
-        window.customElements.define(codePage.is, codePage);
+        window.customElements.define(CodePage.is, CodePage);
     </script>
 </dom-module>
