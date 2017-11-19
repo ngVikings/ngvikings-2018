@@ -42,6 +42,11 @@
       "title": "News"
     },
     {
+      "route": "schedule",
+      "permalink": "/schedule/",
+      "title": "Schedule"
+    },
+    {
       "route": "speakers",
       "permalink": "/speakers/",
       "title": "Speakers"
@@ -68,18 +73,18 @@
       },
       "fontColor": "#2855a5"
     },
-    "speakers": {
-      "title": "Speakers",
-      "description": "Having Angular team members, Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
+    "schedule": {
+      "title": "Schedule",
       "background": {
         "color": "#FFF"
       },
       "fontColor": "#2855a5"
     },
-    "schedule": {
-      "title": "Schedule",
+    "speakers": {
+      "title": "Speakers",
+      "description": "Having Angular team members, Google Developer Experts and legendary international speakers onboard, ngVikings Conference guarantees an excellent program: fresh, technically deep and 100% useful.",
       "background": {
-        "color": "#fff"
+        "color": "#FFF"
       },
       "fontColor": "#2855a5"
     },
