@@ -1,4 +1,4 @@
-ngVikings 2018 got a new website! We now ready to announce sreat speakers each week. Stay tuned! Follow our Twitter: [ngVikingsConf](https://twitter.com/ngVikingsConf) 
+ngVikings 2018 got a new website! We now ready to announce great speakers each week. Stay tuned! Follow our Twitter: [ngVikingsConf](https://twitter.com/ngVikingsConf) 
 
 **By the way, Call For Papers is still open!**
 

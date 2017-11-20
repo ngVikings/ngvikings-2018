@@ -6,3 +6,4 @@ build
 .temp/
 .vscode/
 .firebaserc
+npm-debug.log
