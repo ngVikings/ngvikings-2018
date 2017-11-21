@@ -134,13 +134,10 @@
           <a href="{$ nav.permalink $}" layout vertical center-center>{$ nav.title $}</a>
         </paper-tab>
         {% endfor %}
-        <paper-tab class="nav-item" link>
-          <a href="http://ng-girls.org/ngVikings/" target="_blank" layout vertical center-center>ng-girls</a>
-        </paper-tab>
-        <paper-tab class="signin-tab" on-tap="signIn" link hidden$="[[user.signedIn]]">{$ signIn $}</paper-tab>
+<!--         <paper-tab class="signin-tab" on-tap="signIn" link hidden$="[[user.signedIn]]">{$ signIn $}</paper-tab> -->
       </paper-tabs>
 
-      <paper-menu-button
+<!--       <paper-menu-button
         id="notificationsMenu"
         class="notifications-menu"
         vertical-align="top"
@@ -204,7 +201,7 @@
         icon="hoverboard:account"
         on-tap="signIn"
         hidden$="[[_isAccountIconHidden(user.signedIn, viewport.isTabletPlus)]]"
-      ></paper-icon-button>
+      ></paper-icon-button> -->
     </app-toolbar>
 
   </template>

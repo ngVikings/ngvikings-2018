@@ -37,14 +37,14 @@
       "title": "Home"
     },
     {
+      "route": "",
+      "permalink": "https://ti.to/ngvikings/2018",
+      "title": "Tickets"
+    },
+    {
       "route": "blog",
       "permalink": "/blog/",
       "title": "News"
-    },
-    {
-      "route": "schedule",
-      "permalink": "/schedule/day1",
-      "title": "Schedule"
     },
     {
       "route": "speakers",
@@ -55,7 +55,13 @@
       "route": "team",
       "permalink": "/team/",
       "title": "Team"
+    },
+    {
+      "route": "",
+      "permalink": "http://ng-girls.org/ngVikings/",
+      "title": "ng-girls"
     }
+    
   ],
   "heroSettings": {
     "home": {
