@@ -47,6 +47,11 @@
       "title": "News"
     },
     {
+      "route": "schedule",
+      "permalink": "/schedule/day1",
+      "title": "Schedule"
+    },
+    {
       "route": "speakers",
       "permalink": "/speakers/",
       "title": "Speakers"
