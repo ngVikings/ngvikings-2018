@@ -93,7 +93,10 @@
             <li class="ticket-item">
               <div layout horizontal justified center>
                 <div>
-                  [[ticket.name]]
+
+                  <a href="[[ticket.url]]" hidden$="[[!ticket.url]]">[[ticket.name]]</a>
+                  <span hidden$="[[ticket.url]]">[[ticket.name]]</span>
+
                   <div class="type-description">
                     <span class="ticket-dates">[[ticket.starts]] </span>
                     <span class="ticket-dates">[[ticket.ends]]</span>
