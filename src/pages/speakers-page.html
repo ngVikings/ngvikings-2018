@@ -243,7 +243,7 @@
       _openSpeakerDetails(active, speakers, id) {
         if (active && speakers && Object.keys(speakers).length) {
           requestAnimationFrame(() => {
-              if (id) {
+              if (id && !isNaN(id)) {
                 dialogsActions.openDialog(DIALOGS.SPEAKER, speakers[id]);
               } else if (this.isDialogOpened) {
                 dialogsActions.closeDialog(DIALOGS.SPEAKER);
