@@ -94,10 +94,6 @@
         margin-top: 10px;
       }
 
-      .buy-button {
-        margin-top: 10px;
-      }
-
       .speaker-photo {
         margin-right: 12px;
         width: 32px;
@@ -140,7 +136,7 @@
 
       <div class="session-header" layout horizontal justified>
         <div flex>
-          <h3 class="session-title">[[session.title]]</h3>     
+          <h3 class="session-title">[[session.title]]</h3>
         </div>
         <span class="language">[[slice(session.language, 2)]]</span>
       </div>
@@ -171,9 +167,7 @@
           </div>
         </div>
 
-        <div layout horizontal justified center-aligned>
-
-        <div class="speakers" hidden$="[[!session.speakers.length]]" flex>
+        <div class="speakers" hidden$="[[!session.speakers.length]]">
           <template is="dom-repeat" items="[[session.speakers]]" as="speaker">
             <div class="speaker" layout horizontal center>
               <plastic-image
@@ -190,14 +184,6 @@
             </div>
           </template>
         </div>
-
-            
-                      <a hidden$="[[!session.ticketUrl]]" href="[[session.ticketUrl]]" target="_blank" rel="noopener noreferrer" class="buy-button">
-                        <paper-button class="buy-button" primary>Buy a ticket for [[session.price]] €</paper-button>
-                      </a>
-                      
-
-      </div>
 
       </div>
 
