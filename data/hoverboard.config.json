@@ -37,24 +37,24 @@
       "title": "Home"
     },
     {
+      "route": "speakers",
+      "permalink": "/speakers/",
+      "title": "Speakers"
+    },
+    {
       "route": "",
       "permalink": "https://ti.to/ngvikings/2018",
       "title": "Tickets"
     },
     {
-      "route": "blog",
-      "permalink": "/blog/",
-      "title": "News"
+      "route": "schedule",
+      "permalink": "/schedule/workshops",
+      "title": "Workshops"
     },
     {
       "route": "schedule",
       "permalink": "/schedule/day1",
       "title": "Schedule"
-    },
-    {
-      "route": "speakers",
-      "permalink": "/speakers/",
-      "title": "Speakers"
     },
     {
       "route": "team",

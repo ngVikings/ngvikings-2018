@@ -137,6 +137,14 @@
       <div class="session-header" layout horizontal justified>
         <div flex>
           <h3 class="session-title">[[session.title]]</h3>
+
+          <a href="[[session.ticketUrl]]" hidden$="[[!session.ticketUrl]]"
+          target="_blank"
+          rel="noopener noreferrer">
+        <paper-button class="buy-button" primary>Buy a ticket for [[session.price]] €</paper-button>
+      </a>
+
+          
         </div>
         <span class="language">[[slice(session.language, 2)]]</span>
       </div>
