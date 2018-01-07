@@ -26,6 +26,12 @@
           "newTab": false
         },
         {
+          "name": "Partners",
+          "url": "/partners",
+          "newTab": false
+        },
+        
+        {
           "name": "Contact us",
           "url": "mailto:contact@ngvikings.org",
           "newTab": false
@@ -43,22 +49,22 @@
         {
           "name": "Photos",
           "url": "https://www.facebook.com/pg/ngVikings/photos/?tab=albums",
-          "newTab": false
+          "newTab": true
         },
         {
           "name": "Videos",
           "url": "https://opbeat.com/community/events/ngvikings-2017/",
-          "newTab": false
+          "newTab": true
         },
         {
           "name": "Program",
           "url": "https://2017.ngvikings.org/schedule/",
-          "newTab": false
+          "newTab": true
         },
         {
           "name": "Speakers",
           "url": "https://2017.ngvikings.org/speakers/",
-          "newTab": false
+          "newTab": true
         }
       ]
     },

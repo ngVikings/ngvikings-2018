@@ -57,6 +57,11 @@
       "title": "Schedule"
     },
     {
+      "route": "partners",
+      "permalink": "/partners/",
+      "title": "partners"
+    },
+    {
       "route": "team",
       "permalink": "/team/",
       "title": "Team"
@@ -101,6 +106,14 @@
     },
     "team": {
       "title": "Team",
+      "description": "",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "partners": {
+      "title": "Partners",
       "description": "",
       "background": {
         "color": "#fff"
