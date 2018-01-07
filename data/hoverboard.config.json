@@ -57,6 +57,11 @@
       "title": "Schedule"
     },
     {
+      "route": "partners",
+      "permalink": "/partners/",
+      "title": "partners"
+    },
+    {
       "route": "team",
       "permalink": "/team/",
       "title": "Team"
@@ -107,6 +112,14 @@
       },
       "fontColor": "#2855a5"
     },
+    "partners": {
+      "title": "Partners",
+      "description": "",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
     "faq": {
       "title": "Code of Conduct",
       "background": {
@@ -124,17 +137,17 @@
   },
   "location": {
     "short": "Helsinki, Finland",
-    "address": "Mannerheimintie 13e, 00100 Helsinki, Finland",
+    "address": "Otakaari 24, 02150 Espoo, Finland",
     "pointer": {
-      "latitude": 60.1756992,
-      "longitude": 24.9314205,
+      "latitude": 60.1847782,
+      "longitude": 24.8287634,
       "zoom": 11
     },
     "mapCenter": {
-      "latitude": 60.1756992,
-      "longitude": 24.9314205
+      "latitude": 60.1847782,
+      "longitude": 24.8287634
     },
-    "description": "A masterpiece by the world-renowned Finnish architect, Alvar Aalto, Finlandia Hall is worth a visit in its own right."
+    "description": "Dipoli is Aalto University's main building. As a building, it represents a new type of multi-purpose design that showcases the University's expertise, activities and people."
   },
   "mediaQueries": {
     "xs": {

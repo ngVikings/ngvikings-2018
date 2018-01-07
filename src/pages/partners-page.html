@@ -1,0 +1,124 @@
+<html>
+        <head></head>
+        <body>
+          <dom-module id="partners-page">
+              <template>
+                  <style is="custom-style" include="shared-styles flex flex-alignment"></style>
+              
+                  <style>
+              
+                    :host {
+                      display: block;
+                    }
+              
+                    .block-title {
+                      margin: 24px 0 8px;
+                    }
+              
+                    .logos-wrapper {
+                      display: grid;
+                      grid-template-columns: repeat(2, 1fr);
+                      grid-gap: 16px;
+                    }
+              
+                    .logo-item {
+                      padding: 24px;
+                      position: relative;
+                    }
+              
+                    .logo-img {
+                      height: 160px;
+                      width: 100%;
+                    }
+              
+                    .logo-name {
+                      position: absolute;
+                      padding: 0 20px;
+                      font-size: 12px;
+                      bottom: 10px;
+                      text-align: center;
+                    }
+              
+                    .cta-button {
+                      margin-top: 24px;
+                    }
+              
+                    @media (min-width: 640px) {
+                      .logos-wrapper {
+                        grid-template-columns: repeat(4, 1fr);
+                      }
+                    }
+              
+                    @media (min-width: 812px) {
+                      .logos-wrapper {
+                        grid-template-columns: repeat(5, 1fr);
+                      }
+                    }
+              
+                  </style>
+                  <div class="container">
+              
+                    <template is="dom-repeat" items="[[partners]]" as="block">
+                        <h1 class="block-title">[[block.title]]</h4>
+                        <div class="logos-wrapper">
+                          <template is="dom-repeat" items="[[block.logos]]" as="logo">
+                            <a
+                              class="logo-item card"
+                              href$="[[logo.url]]"
+                              title$="[[logo.name]]"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              layout horizontal center-center
+                            >
+                              <plastic-image
+                                class="logo-img"
+                                srcset="[[logo.logoUrl]]"
+                                sizing="contain"
+                                lazy-load
+                                preload fade
+                              ></plastic-image>
+              
+                              <div class="logo-name">[[logo.name]]</div>
+              
+                            </a>
+                                            
+                          </template>
+                        </div>
+                    </template>
+              
+                    <a href="{$ partnershipProposition $}" target="_blank" rel="noopener noreferrer">
+                      <paper-button class="cta-button animated icon-right">
+                        <span>{$ partnersBlock.button $}</span>
+                        <iron-icon icon="hoverboard:arrow-right-circle"></iron-icon>
+                      </paper-button>
+                    </a>
+                  </div>
+              
+                </template>
+      
+            <script>
+          
+              class PartnersPage extends ReduxMixin(Polymer.Element) {
+                static get is() { return 'partners-page' }
+          
+                 static get properties() {
+                  return {
+                    partners: {
+                      type: Object,
+                      statePath: 'partners'
+                    }
+                  };
+                }
+          
+                connectedCallback() {
+                  super.connectedCallback();
+                  partnersActions.fetchPartners();
+                }
+              }
+          
+              window.customElements.define(PartnersPage.is, PartnersPage);
+          
+            </script>
+          </dom-module>
+        </body>
+      </html>
