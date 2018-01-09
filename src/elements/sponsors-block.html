@@ -8,7 +8,7 @@
 <link rel="import" href="./shared-styles.html">
 <link rel="import" href="./hoverboard-icons.html">
 
-<dom-module id="partners-block">
+<dom-module id="sponsors-block">
   <template>
     <style is="custom-style" include="shared-styles flex flex-alignment"></style>
 
@@ -65,9 +65,9 @@
     </style>
 
     <div class="container">
-      <h1 class="container-title">{$ partnersBlock.title $}</h1>
+      <h1 class="container-title">{$ sponsorsBlock.title $}</h1>
 
-      <template is="dom-repeat" items="[[partners]]" as="block">
+      <template is="dom-repeat" items="[[sponsors]]" as="block">
           <h4 class="block-title">[[block.title]]</h4>
           <div class="logos-wrapper">
             <template is="dom-repeat" items="[[block.logos]]" as="logo">
@@ -107,26 +107,26 @@
 
   <script>
 
-    class PartnersBlock extends ReduxMixin(Polymer.Element) {
+    class SponsorsBlock extends ReduxMixin(Polymer.Element) {
       static get is() {
-        return 'partners-block'
+        return 'sponsors-block'
       }
 
       static get properties() {
         return {
-          partners: {
+          sponsors: {
             type: Object,
-            statePath: 'partners'
+            statePath: 'sponsors'
           }
         };
       }
 
       connectedCallback() {
         super.connectedCallback();
-        partnersActions.fetchPartners();
+        sponsorsActions.fetchSponsors();
       }
     }
 
-    window.customElements.define(PartnersBlock.is, PartnersBlock);
+    window.customElements.define(SponsorsBlock.is, SponsorsBlock);
   </script>
 </dom-module>

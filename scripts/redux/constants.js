@@ -23,6 +23,8 @@ const HIDE_TOAST = 'HIDE_TOAST';
 const FETCH_TICKETS = 'FETCH_TICKETS';
 // partners
 const FETCH_PARTNERS = 'FETCH_PARTNERS';
+// sponsors
+const FETCH_SPONSORS = 'FETCH_SPONSORS';
 // featured videos
 const FETCH_VIDEOS = 'FETCH_VIDEOS';
 // video dialog
