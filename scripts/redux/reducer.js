@@ -73,6 +73,15 @@ const partnersReducer = (state = initialState.partners, action) => {
   }
 };
 
+const sponsorsReducer = (state = initialState.sponsors, action) => {
+  switch (action.type) {
+    case FETCH_SPONSORS:
+      return action.sponsors;
+    default:
+      return state;
+  }
+};
+
 const videosReducer = (state = initialState.videos, action) => {
   switch (action.type) {
     case FETCH_VIDEOS:
