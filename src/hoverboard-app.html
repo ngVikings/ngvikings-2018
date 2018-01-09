@@ -1,0 +1,413 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/lib/utils/render-status.html">
+<link rel="import" href="../bower_components/polymer/lib/utils/import-href.html">
+
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
+<link rel="import" href="../bower_components/iron-lazy-pages/iron-lazy-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+
+<link rel="import" href="../bower_components/plastic-image/plastic-image.html">
+
+<link rel="import" href="mixins/utils-functions.html">
+<link rel="import" href="mixins/redux-mixin.html">
+<link rel="import" href="mixins/scroll-functions.html">
+<link rel="import" href="elements/shared-styles.html">
+<link rel="import" href="elements/hoverboard-icons.html">
+<link rel="import" href="elements/header-toolbar.html">
+<link rel="import" href="elements/header-bottom-toolbar.html">
+<link rel="import" href="elements/hero-block.html">
+<link rel="import" href="elements/footer-block.html">
+<link rel="import" href="effects/sticky-bottom-toolbar.html">
+
+
+<dom-module id="hoverboard-app">
+
+  <template>
+
+    <style is="custom-style" include="shared-styles flex flex-reverse flex-alignment positioning"></style>
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        min-height: 100vh;
+        --paper-menu-button-dropdown-background: #fff;
+      }
+
+      app-drawer app-toolbar {
+        padding: 36px 24px 24px;
+        border-bottom: 1px solid var(--divider-color);
+      }
+
+      app-drawer .dates {
+        margin-top: 42px;
+        font-size: 22px;
+        line-height: 0.95;
+      }
+
+      app-drawer .location {
+        margin-top: 4px;
+        font-size: 15px;
+        color: var(--secondary-text-color);
+      }
+
+      .drawer-list {
+        padding: 16px 0;
+        display: block;
+      }
+
+      .drawer-list a {
+        padding: 8px 24px;
+        display: block;
+        color: var(--primary-text-color);
+      }
+
+      .drawer-list a.selected {
+        font-weight: 500;
+      }
+
+      app-toolbar {
+        height: auto;
+      }
+
+      .toolbar-logo {
+        --iron-image-height: 32px;
+      }
+
+      app-header {
+        background-color: var(--hero-background-color);
+        background-image: var(--hero-background-gradient);
+        transition: background-color 0.3s;
+        border-bottom: 1px solid var(--divider-color);
+      }
+
+      [bottom-sticky]::before {
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        content: "";
+        transition: opacity 0.4s;
+        pointer-events: none;
+        opacity: 0;
+        box-shadow: inset 0 5px 6px -3px rgba(0, 0, 0, 0.4);
+        will-change: opacity;
+      }
+
+      [bottom-sticky][bottom-shadow]::before {
+        opacity: 1;
+      }
+
+      @media (min-width: 640px) {
+        app-toolbar {
+          padding: 0 36px;
+          height: initial;
+        }
+      }
+    </style>
+
+    <iron-media-query id="mq-phone" full query="(max-width: {$ mediaQueries.xs.max $})"
+                      query-matches="{{isPhoneSize}}"></iron-media-query>
+    <iron-media-query id="mq-laptop" full query="(min-width: {$ mediaQueries.md.min $})"
+                      query-matches="{{isLaptopSize}}"></iron-media-query>
+
+    <app-location route="{{appRoute}}"></app-location>
+    <app-route
+      route="{{appRoute}}"
+      pattern="/:page"
+      data="{{routeData}}"
+      tail="{{subroute}}"
+      query-params="{{queryParams}}"
+    ></app-route>
+
+    <app-drawer-layout drawer-width="300px" force-narrow fullbleed>
+
+      <app-drawer id="drawer" slot="drawer" opened="[[ui.isDrawerOpened]]" swipe-open>
+        <app-toolbar layout vertical start>
+          <plastic-image class="toolbar-logo" srcset="/images/logo-monochrome.png" alt="{$ title $}"></plastic-image>
+          <h2 class="dates">{$ dates $}</h2>
+          <h3 class="location">{$ location.short $}</h3>
+        </app-toolbar>
+
+        <iron-selector
+          class="drawer-list"
+          selected="[[route.route]]"
+          attr-for-selected="path"
+          selected-class="selected"
+          role="navigation"
+        >
+          {% for nav in navigation %}
+          <a href="{$ nav.permalink $}" path="{$ nav.route $}" on-tap="closeDrawer">{$ nav.title $}</a>
+          {% endfor %}
+        </iron-selector>
+
+      </app-drawer>
+
+      <app-header-layout id="headerLayout">
+
+        <app-header slot="header" condenses fixed effects="waterfall sticky-bottom-toolbar">
+          <header-toolbar sticky></header-toolbar>
+          <hero-block></hero-block>
+          <header-bottom-toolbar
+            hidden="[[!isEqual(route.route, 'schedule')]]"
+            sticky bottom-sticky
+          ></header-bottom-toolbar>
+        </app-header>
+
+        <iron-lazy-pages attr-for-selected="data-route" selected="[[route.route]]" selected-attribute="active"
+                         hide-immediately>
+          <home-page
+            data-route="home"
+            data-path="pages/home-page.html"
+          ></home-page>
+          <blog-page
+            data-route="blog"
+            data-path="pages/blog-page.html"
+            route="[[subroute]]"
+          ></blog-page>
+          <schedule-page
+            data-route="schedule"
+            data-path="pages/schedule-page.html"
+            route="[[subroute]]"
+          ></schedule-page>
+          <speakers-page
+            data-route="speakers"
+            data-path="pages/speakers-page.html"
+            route="[[subroute]]"
+          ></speakers-page>
+          <team-page
+            data-route="team"
+            data-path="pages/team-page.html"
+          ></team-page>
+          <partners-page
+          data-route="partners"
+          data-path="pages/partners-page.html"
+        ></partners-page>
+          <faq-page
+            data-route="faq"
+            data-path="pages/faq-page.html"
+          ></faq-page>
+          <code-page
+          data-route="code"
+          data-path="pages/code-page.html"
+        ></code-page>
+        </iron-lazy-pages>
+
+        <footer-block></footer-block>
+      </app-header-layout>
+    </app-drawer-layout>
+
+    <video-dialog
+      opened="[[ui.videoDialog.opened]]"
+      video-title="[[ui.videoDialog.title]]"
+      youtube-id="[[ui.videoDialog.youtubeId]]"
+      entry-animation="scale-up-animation"
+      exit-animation="fade-out-animation"
+      disable-controls="[[!ui.videoDialog.disableControls]]"
+      fit fixed-top
+    ></video-dialog>
+
+
+    <speaker-details
+      opened="[[dialogs.speaker.isOpened]]"
+      speaker="[[dialogs.speaker.data]]"
+      with-backdrop="[[viewport.isTabletPlus]]"
+      no-cancel-on-outside-click="[[viewport.isPhone]]"
+    ></speaker-details>
+
+    <session-details
+      opened="[[dialogs.session.isOpened]]"
+      session="[[dialogs.session.data]]"
+      with-backdrop="[[viewport.isTabletPlus]]"
+      no-cancel-on-outside-click="[[viewport.isPhone]]"
+    ></session-details>
+
+    <subscribe-dialog
+      opened="[[dialogs.subscribe.isOpened]]"
+      data="[[dialogs.subscribe.data]]"
+      with-backdrop
+      no-cancel-on-outside-click="[[viewport.isPhone]]">
+    </subscribe-dialog>
+
+    <signin-dialog
+      opened="[[dialogs.signin.isOpened]]"
+      with-backdrop>
+    </signin-dialog>
+
+    <hoverboard-analytics></hoverboard-analytics>
+    <toast-element></toast-element>
+  </template>
+
+  <script>
+    class HoverboardApp extends UtilsFunctions(ScrollFunctions(ReduxMixin(Polymer.Element))) {
+
+      static get is() {
+        return 'hoverboard-app';
+      }
+
+      static get properties() {
+        return {
+          ui: {
+            type: Object,
+            statePath: 'ui'
+          },
+          route: {
+            type: String,
+            statePath: 'routing'
+          },
+          hero: {
+            type: Object,
+            statePath: 'hero',
+            observer: '_heroChanged'
+          },
+          dialogs: {
+            type: Object,
+            statePath: 'dialogs',
+            observer: '_dialogToggled'
+          },
+          viewport: {
+            type: Object,
+            statePath: 'ui.viewport'
+          },
+          schedule: {
+            type: Object,
+            statePath: 'schedule'
+          },
+          notifications: {
+            type: Boolean,
+            statePath: 'notifications'
+          },
+          _openedDialog: {
+            type: String
+          },
+          user: {
+            type: Object,
+            statePath: 'user'
+          },
+          providerUrls: {
+            type: Object,
+            value: '{$ signInProviders.allowedProvidersUrl $}'
+          }
+        };
+      }
+
+      static get observers() {
+        return [
+          '_routeDataChanged(routeData.page, subroute.path)',
+          '_viewportChanged(isPhoneSize, isLaptopSize)'
+        ];
+      }
+
+      constructor() {
+        super();
+        window.performance && performance.mark && performance.mark('hoverboard-app.created');
+        this._removeQueryParams = this._removeQueryParams.bind(this);
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+        window.addEventListener('reset-query-params', this._removeQueryParams);
+      }
+
+      disconnectedCallback() {
+        super.disconnectedCallback();
+        window.removeEventListener('reset-query-params', this._removeQueryParams);
+      }
+
+      ready() {
+        super.ready();
+        console.log('Hoverboard v2 is ready!');
+        this.removeAttribute('unresolved');
+        this._ensureLazyLoaded();
+//        userActions.autoSignIn(this.providerUrls);
+      }
+
+      closeDrawer() {
+        uiActions.toggleDrawer(false);
+      }
+
+      _ensureLazyLoaded() {
+        if (!this.loadComplete) {
+          Polymer.RenderStatus.afterNextRender(this, () => {
+            Polymer.importHref(this.resolveUrl('lazy-resources.html'), () => {
+              this.loadComplete = true;
+              notificationsActions.initializeMessaging()
+                .then(notificationsActions.getToken);
+            });
+          });
+        }
+      }
+
+      _heroChanged(hero) {
+        if (!hero) return;
+        this.updateStyles({
+          '--hero-background-color': hero.background.color || '',
+          '--hero-background-gradient': hero.background.gradient || '',
+          '--hero-color': hero.fontColor || ''
+        });
+        setTimeout(() => {
+          requestAnimationFrame(() => {
+            this.$.headerLayout.resetLayout();
+          });
+        }, 10);
+      }
+
+      _routeDataChanged(page, subroutePath) {
+        if (!page && page !== '') {
+          return;
+        }
+        const hasSubroute = subroutePath !== '' && subroutePath !== '/';
+
+        if (!this.route || (page !== this.route.route)) {
+          !hasSubroute && this.scrollToY(0, 100);
+          uiActions.setHero(null, page);
+          routingActions.setRoute(page);
+        } else if (page === 'blog' && !hasSubroute) {
+          uiActions.setHero(null, page);
+        }
+      }
+
+      _viewportChanged(isPhoneSize, isLaptopSize) {
+        uiActions.setViewportSize({
+          isPhone: isPhoneSize,
+          isTabletPlus: !isPhoneSize,
+          isLaptopPlus: isLaptopSize
+        });
+      }
+
+      _dialogToggled(dialogs) {
+        if (this._openedDialog) {
+          document.body.style.overflow = '';
+          this._openedDialog = null;
+        }
+        this._openedDialog = Object.keys(dialogs).find(key => dialogs[key].isOpened);
+        if (this._openedDialog) {
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      _removeQueryParams() {
+        this.set('queryParams', null);
+      }
+    }
+
+    window.customElements.define(HoverboardApp.is, HoverboardApp);
+  </script>
+
+</dom-module>

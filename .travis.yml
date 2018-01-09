@@ -1,0 +1,34 @@
+language: node_js
+node_js: 7
+cache:
+  yarn: true
+  directories:
+  - node_modules
+  - "${NVM_PATH}_modules"
+env:
+- CXX=g++-4.8
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+install:
+- yarn
+- cd functions && yarn && cd ..
+script: echo "Deploying!"
+before_deploy: yarn run build
+deploy:
+- provider: firebase
+  skip_cleanup: true
+  on:
+    branch: hoverboard
+  project: ngvikings-81b48
+  token:
+    secure: P/DRSpimO1hp2kYAdZ5GrApABvT/Fox1R1na2Jj4/Oia0meENrAUVcJa80xnqPnTpxyHoXBoMwhMuytqAUnGl9QV9TlV1LiuZmPgMv8B9a34xrc17uxTqt4KYxfVptJjz09LEo1L8qFf8VdqcfMg0T+SAJrmif7U3NTulCi1LsWDBrO8O+bA3IYTxMCO3AMzaxBnTWPmr4uyGC4NfCE2t/bckNNHImIevH0QWVwt1ubvHRiPcb0sS1bmsuJs5YwqhqtkZOVGlIOHCpbZrJRZiufb7rTVgsIuOAUFckAcyQaKyYJTgevzeyaKwpwIchf2T8aoxve2VWH+4stKLtAClBx4x9Tx2HgLX9+b4dEXlZn8e/uYGcRH0c+3oG5psoJrTIVDv1OaFwJJjSrgS22epGrH8MS+nPJtj3cuPcKF10EELmEvyq6sg3MikwZzFPzjIoHKh29QiGAjkgBDeQUTNdH79IpRqaKZkNcndB1aMi6+UP6cykRbDCGOhPiCU/m3Wifut3b32R7I+Iw7WbVo8Nf/nlkypGxX1cofSh7S1pu0koRYf8vlenS58U6UWaH/jitb2JKH0Jco/s53pkFatRIyEQ8hzsFTVwt7EcD0TvkjoRGivoB/YlWS5P/nQNj1j4LnoElon/FxUYe9hOrZPD1PlftVmfboQN3+tQjxrfY=
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
+    slack: ngvikings:zQoPZukTb2HbPBn4bbdXWTB4

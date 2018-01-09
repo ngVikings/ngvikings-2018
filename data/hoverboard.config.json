@@ -1,0 +1,217 @@
+{
+  "basepath": "/",
+  "url": "https://ngvikings.org/",
+  "startDate": "2018-03-01T09:00:00+01:00",
+  "endDate": "2018-03-02T19:00:00+01:00",
+  "analytics": {
+    "prod": "UA-7105068-12",
+    "dev": "UA-7105068-12"
+  },
+  "environment": "dev",
+  "prefix": "/",
+  "firebase": {
+    "apiKey": "AIzaSyBdvnINFe6A8hNMJEOrtOc-z4N-UCmKmJ8",
+    "authDomain": "ngvikings-81b48.firebaseapp.com",
+    "databaseURL": "https://ngvikings-81b48.firebaseio.com",
+    "projectId": "ngvikings-81b48",
+    "storageBucket": "ngvikings-81b48.appspot.com",
+    "messagingSenderId": "359590570491"
+  },
+  "googleMapApiKey": "AIzaSyBW4q921yGrUvFhqlD3aPCA8FIkmc_ollk",
+  "organizer": {
+    "name": "ngVikings Team",
+    "twitter": "ngVikingsConf",
+    "blog": "/news/",
+    "url": "https://ngvikings.org"
+  },
+  "webapp": {
+    "shortName": "ngVikings2018",
+    "themeColor": "#2855a5",
+    "backgroundColor": "#2855a5"
+  },
+  "hashtag": "ngVikings",
+  "navigation": [
+    {
+      "route": "home",
+      "permalink": "/",
+      "title": "Home"
+    },
+    {
+      "route": "speakers",
+      "permalink": "/speakers/",
+      "title": "Speakers"
+    },
+    {
+      "route": "",
+      "permalink": "https://ti.to/ngvikings/2018",
+      "title": "Tickets"
+    },
+    {
+      "route": "schedule",
+      "permalink": "/schedule/workshops",
+      "title": "Workshops"
+    },
+    {
+      "route": "schedule",
+      "permalink": "/schedule/day1",
+      "title": "Schedule"
+    },
+    {
+      "route": "partners",
+      "permalink": "/partners/",
+      "title": "partners"
+    },
+    {
+      "route": "team",
+      "permalink": "/team/",
+      "title": "Team"
+    },
+    {
+      "route": "",
+      "permalink": "http://ng-girls.org/ngVikings/",
+      "title": "ng-girls"
+    }
+    
+  ],
+  "heroSettings": {
+    "home": {
+      "description": "The main Angular event in the Nordics. And the only travelling Angular conference in the world.",
+      "background": {
+        "color": "#2855a5",
+        "image": "/images/backgrounds/home.jpg"
+      },
+      "fontColor": "#FFF"
+    },
+    "blog": {
+      "title": "News",
+      "background": {
+        "color": "#FFF"
+      },
+      "fontColor": "#2855a5"
+    },
+    "schedule": {
+      "title": "Schedule",
+      "background": {
+        "color": "#FFF"
+      },
+      "fontColor": "#2855a5"
+    },
+    "speakers": {
+      "title": "Speakers",
+      "description": "",
+      "background": {
+        "color": "#FFF"
+      },
+      "fontColor": "#2855a5"
+    },
+    "team": {
+      "title": "Team",
+      "description": "",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "partners": {
+      "title": "Partners",
+      "description": "",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "faq": {
+      "title": "Code of Conduct",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "code": {
+      "title": "Code of Conduct",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    }
+  },
+  "location": {
+    "short": "Helsinki, Finland",
+    "address": "Otakaari 24, 02150 Espoo, Finland",
+    "pointer": {
+      "latitude": 60.1847782,
+      "longitude": 24.8287634,
+      "zoom": 11
+    },
+    "mapCenter": {
+      "latitude": 60.1847782,
+      "longitude": 24.8287634
+    },
+    "description": "Dipoli is Aalto University's main building. As a building, it represents a new type of multi-purpose design that showcases the University's expertise, activities and people."
+  },
+  "mediaQueries": {
+    "xs": {
+      "max": "639px"
+    },
+    "sm": {
+      "min": "640px",
+      "max": "811px"
+    },
+    "md": {
+      "min": "812px",
+      "max": "1023px"
+    },
+    "lg": {
+      "min": "1024px"
+    }
+  },
+  "socialNetwork": {
+    "follow": [
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/ngVikings"
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/ngVikingsConf/"
+      }
+    ],
+    "share": [
+      {
+        "name": "gplus",
+        "url": "https://plus.google.com/share?url="
+      },
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/sharer.php?u="
+      },
+      {
+        "name": "twitter",
+        "url": "https://twitter.com/intent/tweet?text="
+      }
+    ]
+  },
+  "mailto": "contact@ngvikings.org",
+  "mailchimp": {
+    "url": "//ngvikings.us14.list-manage.com/subscribe/post?u=6b46654a7c89c5e401545b749&amp;id=cc658f949f",
+    "name": "6b46654a7c89c5e401545b749_cc658f949f"
+  },
+  "signInProviders": {
+    "providersData": [
+      {
+        "name": "google",
+        "label": "Sign-in with Google",
+        "url": "https://accounts.google.com"
+      }, 
+      {
+        "name": "twitter",
+        "label": "Sign-in with Twitter",
+        "url": "https://twitter.com"
+      }
+    ],
+    "allowedProvidersUrl": [
+      "https://accounts.google.com",
+      "https://twitter.com"
+    ]
+  }
+}
