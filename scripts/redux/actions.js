@@ -117,6 +117,17 @@ const partnersActions = {
   }
 };
 
+const sponsorsActions = {
+  fetchSponsors: () => {
+    return firebase.database()
+      .ref('/sponsors')
+      .on('value', snapshot => store.dispatch({
+        type: FETCH_SPONSORS,
+        sponsors: snapshot.val()
+      }));
+  }
+};
+
 const videosActions = {
   fetchVideos: () => {
     return firebase.database()
