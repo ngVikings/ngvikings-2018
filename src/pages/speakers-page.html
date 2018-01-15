@@ -218,8 +218,9 @@
         return {
           route: Object,
           active: Boolean,
-          speakers: {
+          speakersRaw: {
             type: Object,
+            observer: '_generateSpeakers',
             statePath: 'speakers'
           },
           isDialogOpened: {
@@ -231,7 +232,7 @@
 
       static get observers() {
         return [
-          '_openSpeakerDetails(active, speakers, routeData.page)'
+          '_openSpeakerDetails(active, speakersRaw, routeData.page)'
         ];
       }
 
@@ -251,6 +252,11 @@
             }
           )
         }
+      }
+
+      _generateSpeakers(speakers) {
+        const sortedSpeakers = this.transformToArray(speakers, 'id').sort((a,b) => a.name.localeCompare(b.name));
+        this.set('speakers', sortedSpeakers);
       }
     }
 
