@@ -13,7 +13,6 @@
     <style is="custom-style" include="shared-styles flex flex-alignment"></style>
 
     <style>
-
       :host {
         display: block;
       }
@@ -61,39 +60,25 @@
           grid-template-columns: repeat(5, 1fr);
         }
       }
-
     </style>
 
     <div class="container">
       <h1 class="container-title">{$ sponsorsBlock.title $}</h1>
+      <div class="logos-wrapper">
 
-      <template is="dom-repeat" items="[[sponsors]]" as="block">
-          <h4 class="block-title">[[block.title]]</h4>
-          <div class="logos-wrapper">
-            <template is="dom-repeat" items="[[block.logos]]" as="logo">
-              <a
-                class="logo-item card"
-                href$="[[logo.url]]"
-                title$="[[logo.name]]"
-                target="_blank"
-                rel="noopener noreferrer"
-                layout horizontal center-center
-              >
-                <plastic-image
-                  class="logo-img"
-                  srcset="[[logo.logoUrl]]"
-                  sizing="contain"
-                  lazy-load
-                  preload fade
-                ></plastic-image>
+        <template is="dom-repeat" items="[[sponsors]]" as="block">
+          <template is="dom-repeat" items="[[block.logos]]" as="logo">
+            <a class="logo-item card" href$="[[logo.url]]" title$="[[logo.name]]" target="_blank" rel="noopener noreferrer" layout horizontal
+              center-center>
+              <plastic-image class="logo-img" srcset="[[logo.logoUrl]]" sizing="contain" lazy-load preload fade></plastic-image>
 
-                <div class="logo-name">[[logo.name]]</div>
+              <div class="logo-name">[[logo.name]]</div>
 
-              </a>
-                              
-            </template>
-          </div>
-      </template>
+            </a>
+
+          </template>
+        </template>
+      </div>
 
       <a href="{$ partnershipProposition $}" target="_blank" rel="noopener noreferrer">
         <paper-button class="cta-button animated icon-right">
