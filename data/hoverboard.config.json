@@ -57,9 +57,14 @@
       "title": "Schedule"
     },
     {
+      "route": "sponsors",
+      "permalink": "/sponsors/",
+      "title": "Sponsors"
+    },
+    {
       "route": "partners",
       "permalink": "/partners/",
-      "title": "partners"
+      "title": "Partners"
     },
     {
       "route": "team",
@@ -106,6 +111,14 @@
     },
     "team": {
       "title": "Team",
+      "description": "",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "sponsors": {
+      "title": "Sponsors",
       "description": "",
       "background": {
         "color": "#fff"

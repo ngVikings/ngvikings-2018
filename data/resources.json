@@ -26,11 +26,15 @@
           "newTab": false
         },
         {
+          "name": "Sponsors",
+          "url": "/sponsors",
+          "newTab": false
+        },
+        {
           "name": "Partners",
           "url": "/partners",
           "newTab": false
         },
-        
         {
           "name": "Contact us",
           "url": "mailto:contact@ngvikings.org",
@@ -74,11 +78,6 @@
         {
           "name": "Partnership Proposition",
           "url": "http://bit.ly/sponsor-ngvikings",
-          "newTab": true
-        },
-        {
-          "name": "Call for Papers",
-          "url": "http://bit.ly/vikings-cfp",
           "newTab": true
         }
       ]
