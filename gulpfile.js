@@ -10,6 +10,7 @@ const mergeStream = require('merge-stream');
 const polymerBuild = require('polymer-build');
 const browserSync = require('browser-sync').create();
 const history = require('connect-history-api-fallback');
+const rename = require('gulp-rename');
 
 const HtmlSplitter = polymerBuild.HtmlSplitter;
 const PolymerProject = polymerBuild.PolymerProject;
@@ -118,6 +119,13 @@ function build() {
           .pipe(uglify())
           .pipe(gulp.dest(config.build.rootDirectory));
       })
+
+      .then(() => {
+        return gulp.src('service-worker-no-op.js')
+        .pipe(rename({ basename: 'service-worker'}))
+        .pipe(gulp.dest(config.build.rootDirectory));
+      })
+
       .then(() => {
         console.log('Build complete!');
         resolve();

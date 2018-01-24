@@ -245,7 +245,8 @@
         if (active && speakers && Object.keys(speakers).length) {
           requestAnimationFrame(() => {
               if (id && !isNaN(id)) {
-                dialogsActions.openDialog(DIALOGS.SPEAKER, speakers[id]);
+                const speakerData = speakers[id];
+                speakerData && dialogsActions.openDialog(DIALOGS.SPEAKER, speakerData);
               } else if (this.isDialogOpened) {
                 dialogsActions.closeDialog(DIALOGS.SPEAKER);
               }

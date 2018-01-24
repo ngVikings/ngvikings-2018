@@ -149,12 +149,12 @@
     }
   },
   "location": {
-    "short": "Helsinki, Finland",
+    "short": "Espoo, Finland",
     "address": "Otakaari 24, 02150 Espoo, Finland",
     "pointer": {
       "latitude": 60.1847782,
       "longitude": 24.8287634,
-      "zoom": 11
+      "zoom": 13
     },
     "mapCenter": {
       "latitude": 60.1847782,
