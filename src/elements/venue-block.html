@@ -1,0 +1,242 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/marked-element/marked-element.html">
+
+<link rel="import" href="../mixins/redux-mixin.html">
+<link rel="import" href="hoverboard-icons.html">
+
+<dom-module id="venue-block">
+  <template>
+    <style is="custom-style" include="shared-styles flex flex-alignment positioning"></style>
+
+    <style>
+      :host {
+        display: block;
+      }
+
+      .block:not(:last-of-type) {
+        margin-bottom: 32px;
+      }
+
+      paper-button {
+        margin: 0;
+      }
+    </style>
+    <div class="container" layout horizontal>
+
+      <div class="description-block" flex>
+
+        <div class="block">
+          <marked-element>
+            <div slot="markdown-html"></div>
+            <script type="text/markdown">
+
+              ## The conference venue
+
+              The conference will be held at [Dipoli](https://www.archdaily.com/884666/dipoli-aalto-university-main-building-ala-architects). ngVikings conference takes place on the second floor on Dipoli. Both main entrances ‘Pääovi’ and ‘Käpyovi’ can be used to access the conference.
+              Both main entrances 'Pääovi' and 'Käpyovi' can be used to access the conference.
+
+              Conference sessions are organised in Kaleva and Sief halls – see the following map. Lunch and coffee servings take place in Capitolium lobby.
+
+              Cloakroom and toilets are on the first floor. Visitors arrive the conference space using the stairs to the Capitolium. The sponsor area is available also for people without conference tickets. Kaleva and Sief halls may be entered only with a conference badge. There is a small entrance to upper floor café on the upper left hand corner of Capitolium.
+
+              **Address**: Otakaari 24, 02150 Espoo
+
+            </script>
+          </marked-element>
+
+
+        </div>
+
+        <div class="block">
+          <marked-element>
+            <div slot="markdown-html"></div>
+            <script type="text/markdown">
+              ## Workshop Venue
+
+              Our workshop venue also locates in Aalto university, named [Aalto A-Grid building](http://agrid.fi/)
+
+              **Address**: Otakaari 5 02150 Espoo
+
+              &nbsp;
+              * * *
+              &nbsp;
+
+            </script>
+          </marked-element>
+        </div>
+
+        <div class="block">
+          <marked-element>
+            <div slot="markdown-html"></div>
+            <script type="text/markdown">
+              ## How to get to the Venue?
+
+              #### From Helsinki center:
+
+              Otaniemi campus area is best reached using the newly opened “Aalto Yliopisto” metro station. As Helsinki metro consists of a single line, there is no major risks of getting lost. Dipoli is in a walking distance from the metro station.
+
+              #### By Taxi:
+
+              Finnish taxis are reliable and clean. The fees are mandated by government and taxi meter is always used. The fee is relatively high. You can pay with the common credit cards in taxis. Taxis can be booked by calling to **0100 7000 (Helsinki)** or **0100 7070 (Espoo)**. There is a taxi rank and plenty of cars in Helsinki-Vantaa airport.
+
+              &nbsp;
+              * * *
+              &nbsp;
+            </script>
+          </marked-element>
+        </div>
+
+        <div class="block">
+          <marked-element>
+            <div slot="markdown-html"></div>
+            <script type="text/markdown">
+              ## Travel Ticket
+
+              Metro, trains, trams, and buses have the same ticketing system. There are different prices for intra-city transit and transit between cities in Helsinki metropolitan region. Otaniemi is part of city of Espoo and thus you need to buy a regional ticket when coming from Helsinki. Also Helsinki-Vantaa airport is located in Vantaa, and again you need to buy a **regional ticket** to get to Helsinki.
+
+              The recommended way to buy the ticket is from [HSL mobile ticket application](https://www.hsl.fi/en/mobileticket) ([Google play](https://play.google.com/store/apps/details?id=com.hsl.mobiililippu), [Apple Store](https://itunes.apple.com/fi/app/hsl-mobiililippu/id1078566902), [Windows Phones](https://www.microsoft.com/fi-fi/store/p/hsl-mobiililippu/9nblggh1ndz7?rtc=1)), and it is cheaper than ticket machines or from bus driver!
+
+              For more information about the tickets, please check [https://www.hsl.fi/en/tickets-and-fares](https://www.hsl.fi/en/tickets-and-fares) and for routing, use [https://www.reittiopas.fi/](https://www.reittiopas.fi/).
+
+              &nbsp;
+              * * *
+              &nbsp;
+            </script>
+          </marked-element>
+        </div>
+
+        <div class="block">
+          <marked-element>
+            <div slot="markdown-html"></div>
+            <script type="text/markdown">
+                ## After party
+
+                The location is quite close to the venue, around 8 mins walk distance. There will DJ, free drink, snack during the party. Please join us!
+
+                The metro opens until midnight, so no hurry going back after conference, enjoy the time with the speakers, organizers, sponsors and other cool people around you!
+
+                There is a restaurant just nearby the party place which NgVikings has reserved, they offer good food, if feeling hungry after conference, you can have dinner there then join our party!
+
+                **Address:** Tietotie 1, 02150 Espoo
+
+              &nbsp;
+              * * *
+              &nbsp;
+            </script>
+          </marked-element>
+        </div>
+
+        <div class="block">
+          <marked-element>
+            <div slot="markdown-html"></div>
+            <script type="text/markdown">
+
+              ## Hotels
+
+              1. [Radisson Blu Hotel Espoo](https://www.radissonblu.com/en/hotel-espoo) (4 starts) -- Roughly 130 € per night.
+
+                  *Right beside conference venue, seaside, only 5 mins walk distances from venue*
+
+              2. [Hotel Arthur](https://www.hotelarthur.fi/en/) (4 starts) -- Roughly 80€ per night.
+
+                  *In the city center, close the main railway station and access to all kinds of restaurants, shops and markets.*
+
+              3. [Kongressikoti Hotel](http://kongressikoti.fi/) - Roughly 60€ per night.
+
+                  *Less than 200 m from the Helsinki Cathedral.*
+
+              4. [Hostel Diana Park](http://www.dianapark.fi/) - Roughly 30€ per night.
+
+                  *Located in Helsinki city center.*
+
+              &nbsp;
+              * * *
+              &nbsp;
+            </script>
+          </marked-element>
+        </div>
+
+        <div class="block">
+          <marked-element>
+            <div slot="markdown-html"></div>
+            <script type="text/markdown">
+              ## Worth to checking out:
+
+              1. Helsinki Cathedral
+
+                  *A distinctive landmark in the Helsinki cityscape, with its tall, green dome surrounded by four smaller domes, the building is in the neoclassical style.*
+
+              2. Uspenski Cathedral
+
+                  *The Cathedral is set upon a hillside on the Katajanokka peninsula overlooking the city.*
+
+              3. Temppeliaukion Church
+
+                 *Built directly into solid rock, it is also known as the Church of the Rock and Rock Church.*
+
+              4. [Allas Sea Pool](https://www.allasseapool.com/front-page.html)
+
+                  *Allas Sea Pool is a garden like oasis in the heart of Helsinki with a large pool area and magnificent saunas. In addition to swimming, bathing in the saunas and good food, Allas Sea Pool offers many options for wellness. Allas is full of events and things to do - good modern life right at the shore of the Baltic Sea!*
+
+              5. [Löyly](http://www.loylyhelsinki.fi/en/front-page/)
+
+                  *You can’t miss Finnish Sauna! Löyly, an urban oasis occupying a stretch of beautiful Helsinki waterfront, offers a warm welcome and many delights for locals and visitors alike.*
+
+
+            </script>
+          </marked-element>
+        </div>
+
+
+        <div class="block">
+          <marked-element>
+            <div slot="markdown-html"></div>
+            <script type="text/markdown">
+              ## About Finland
+
+              * Main languages are Finnish, English. Check out our brief guide to Finnish in order to surprise the locals. We use euro as our currency.
+
+              * Finland is generally considered a safe country. Do not try to go past people in the grill queue, through, as that's a common way to find yourself in a trouble.
+
+              * Some Finns don't like if you tell them Finland is a part of Scandinavia. Technically a small part in the north is but some consider Finland as a culturally separate entity. The more inclusive term to use might be fennoscandia (Finland and the rest).
+
+              * You can read a bit about Finland and Helsinki at this fresh and often updated site: [http://www.visitfinland.com](http://www.visitfinland.com)
+
+            </script>
+          </marked-element>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class VenueBlock extends ReduxMixin(Polymer.Element) {
+
+
+
+      static get is() {
+        return 'venue-block'
+      }
+
+      static get properties() {
+        return {
+          viewport: {
+            type: Object,
+            statePath: 'ui.viewport'
+          },
+            confVenueSrc : String
+        }
+      }
+
+        constructor() {
+            super();
+            this.confVenueSrc = './test.md';
+        }
+    }
+
+    customElements.define(VenueBlock.is, VenueBlock);
+  </script>
+</dom-module>

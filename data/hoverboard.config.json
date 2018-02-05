@@ -57,6 +57,11 @@
       "title": "Schedule"
     },
     {
+      "route": "attendees",
+      "permalink": "/attendees/",
+      "title": "Attendees"
+    },
+    {
       "route": "sponsors",
       "permalink": "/sponsors/",
       "title": "Sponsors"
@@ -111,6 +116,14 @@
     },
     "team": {
       "title": "Team",
+      "description": "",
+      "background": {
+        "color": "#fff"
+      },
+      "fontColor": "#2855a5"
+    },
+    "attendees": {
+      "title": "For Attendees",
       "description": "",
       "background": {
         "color": "#fff"
