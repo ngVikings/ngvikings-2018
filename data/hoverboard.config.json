@@ -56,6 +56,11 @@
       "permalink": "/schedule/day1",
       "title": "Schedule"
     },
+    {	
+      "route": "attendees",	
+      "permalink": "/attendees/",	
+      "title": "Attendees"	
+    },
     {
       "route": "sponsors",
       "permalink": "/sponsors/",
