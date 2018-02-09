@@ -44,21 +44,12 @@
 
     <script>
 
-        class AttendeesPage extends ReduxMixin
-
-        (Polymer.Element)
-        {
-            static
-            get
-            is()
-            {
+        class AttendeesPage extends ReduxMixin (Polymer.Element) {
+            static get is() {
                 return 'attendees-page'
             }
 
-            static
-            get
-            properties()
-            {
+            static get properties() {
                 return {
                     sponsors: {
                         type: Object,
@@ -67,8 +58,7 @@
                 };
             }
 
-            connectedCallback()
-            {
+            connectedCallback() {
                 super.connectedCallback();
                 sponsorsActions.fetchSponsors();
             }
