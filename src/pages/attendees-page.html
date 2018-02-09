@@ -1,70 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../elements/venue-block.html">
 
 <dom-module id="attendees-page">
-    <template>
-        <style is="custom-style" include="shared-styles flex flex-alignment"></style>
+  <template>
+    <style is="custom-style" include="shared-styles flex flex-alignment"></style>
 
-        <style>
-
-            :host {
-                display: block;
-            }
-
-            .block-title {
-                margin: 24px 0 8px;
-            }
-
-            .cta-button {
-                margin-top: 24px;
-            }
-
-            @media (min-width: 640px) {
-                .logos-wrapper {
-                    grid-template-columns: repeat(4, 1fr);
-                }
-            }
-
-            @media (min-width: 812px) {
-                .logos-wrapper {
-                    grid-template-columns: repeat(5, 1fr);
-                }
-            }
-
-        </style>
-        <div class="container">
-
-            <template is="dom-repeat" items="[[attendees]]" as="block">
-                <h1 class="block-title">[[block.title]]</h1>
-            </template>
-            <venue-block></venue-block>
-
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <div class="content-wrapper">
+      <div class="container">
+        <div class="content" layout justified horizontal wrap>
+          <venue-block></venue-block>
         </div>
+      </div>
+    </div>
+  </template>
 
-    </template>
+  <script>
 
-    <script>
+    class AttendeesPage extends Polymer.Element {
+      static get is() {
+        return 'attendees-page'
+      }
+    }
 
-        class AttendeesPage extends ReduxMixin (Polymer.Element) {
-            static get is() {
-                return 'attendees-page'
-            }
+    window.customElements.define(AttendeesPage.is, AttendeesPage);
 
-            static get properties() {
-                return {
-                    sponsors: {
-                        type: Object,
-                        statePath: 'attendees'
-                    }
-                };
-            }
-
-            connectedCallback() {
-                super.connectedCallback();
-                sponsorsActions.fetchSponsors();
-            }
-        }
-
-        window.customElements.define(AttendeesPage.is, AttendeesPage);
-
-    </script>
+  </script>
 </dom-module>
