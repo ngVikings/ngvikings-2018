@@ -114,17 +114,9 @@ function build() {
 
         return waitFor(normalizeStream);
       })
-      .then(() => {
-        return gulp.src(prependPath(config.build.rootDirectory, 'service-worker.js'))
-          .pipe(uglify())
-          .pipe(gulp.dest(config.build.rootDirectory));
-      })
 
-      .then(() => {
-        return gulp.src(prependPath(config.build.rootDirectory, 'service-worker.js'))
-        .pipe(rename({ basename: 'service-worker-original'}))
-        .pipe(gulp.dest(config.build.rootDirectory));
-      })
+
+
       .then(() => {
         return gulp.src('service-worker-no-op.js')
         .pipe(rename({ basename: 'service-worker'}))
